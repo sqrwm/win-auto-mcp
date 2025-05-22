@@ -1,0 +1,1 @@
+msedge.exe --user-data-dir="Q:\tetsprofle1" --no-first-run

@@ -1,0 +1,1965 @@
+{
+   "checksum": "2d083cb5176161f3b3a5ba89c38aa012",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "children": [ {
+               "date_added": "13291720222560376",
+               "date_last_used": "13391514080724573",
+               "guid": "ba6eb96d-ae70-4ee9-aafb-ca0217d09d6d",
+               "id": "7",
+               "name": "Work items - Boards",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://microsoft.visualstudio.com/Edge/_workitems/assignedtome/",
+               "visit_count": 100
+            }, {
+               "date_added": "13291784807541610",
+               "date_last_used": "13365572795990154",
+               "guid": "4da3c379-74fc-4b6b-bfdf-ac8cb74812a1",
+               "id": "8",
+               "name": "Getting Started - Overview",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://microsoft.visualstudio.com/Edge/_wiki/wikis/Edge.wiki/144/Getting-Started",
+               "visit_count": 5
+            }, {
+               "date_added": "13291813491042426",
+               "date_last_used": "13341483468876456",
+               "guid": "8fc26988-ece7-4389-a658-0e4f3b87a5d4",
+               "id": "9",
+               "name": "Create a Pull Request - Overview",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://microsoft.visualstudio.com/Edge/_wiki/wikis/Edge.wiki/88/Create-a-Pull-Request",
+               "visit_count": 0
+            }, {
+               "date_added": "13291957347647883",
+               "date_last_used": "13317808950405283",
+               "guid": "0dce36a8-0088-40b3-898d-71e3cc386bc4",
+               "id": "10",
+               "name": "Dual Engine Versioning - Overview",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://microsoft.visualstudio.com/Edge/_wiki/wikis/Edge.wiki/1306/Dual-Engine-Versioning",
+               "visit_count": 0
+            }, {
+               "date_added": "13291983592899470",
+               "date_last_used": "0",
+               "guid": "24726720-40a6-4141-a299-5dc86902848e",
+               "id": "11",
+               "name": "StockAwardBasics-forChinesepassportholder.pptx",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://microsoft.sharepoint.com/:p:/r/sites/HRweb/_layouts/15/doc2.aspx?sourcedoc=%7B14BECE6E-2738-47CE-8ECB-150E58163BC1%7D&file=StockAwardBasics-forChinesepassportholder.pptx&action=edit&mobileredirect=true&DefaultItemOpen=1&isSPOFile=1&params=eyJBcHBOYW1lIjoiVGVhbXMtRGVza3RvcCIsIkFwcFZlcnNpb24iOiIyNy8yMjAyMjEwMDIwNyJ9",
+               "visit_count": 0
+            }, {
+               "date_added": "13292390399425333",
+               "date_last_used": "0",
+               "guid": "185e5a1f-3896-43da-9dba-cfada01ff516",
+               "id": "12",
+               "name": "b",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://ref.chinanorth.cloudapp.chinacloudapi.cn/Parking/zh-CN/Apply/Create",
+               "visit_count": 0
+            }, {
+               "date_added": "13292754153796451",
+               "date_last_used": "0",
+               "guid": "f2055502-9506-4251-a8eb-2ec64b83dff9",
+               "id": "13",
+               "name": "Testing Overview - Overview",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://microsoft.visualstudio.com/Edge/_wiki/wikis/Edge.wiki/172/Testing-Overview?anchor=gtests",
+               "visit_count": 0
+            }, {
+               "date_added": "13292754559956261",
+               "date_last_used": "0",
+               "guid": "adb9197e-6416-4cf3-b574-1e4d9bf77a0b",
+               "id": "14",
+               "name": "How to trace a unit test file to its associated binary - Overview",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://microsoft.visualstudio.com/Edge/_wiki/wikis/Edge.wiki/56187/How-to-trace-a-unit-test-file-to-its-associated-binary",
+               "visit_count": 0
+            }, {
+               "date_added": "13292754682787203",
+               "date_last_used": "13317213667802919",
+               "guid": "2e1ca0f3-2fc8-4ff3-a7b7-c36c4bf94080",
+               "id": "15",
+               "name": "Pull request 7117348: Fix bug: MSA web to browser dialog enable arrow key traversal - Repos",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://dev.azure.com/microsoft/Edge/_git/chromium.src/pullrequest/7117348",
+               "visit_count": 0
+            }, {
+               "date_added": "13292755887554165",
+               "date_last_used": "0",
+               "guid": "7871db67-8816-4545-9882-b8be62c35510",
+               "id": "16",
+               "name": "Install Tools - OSG Wiki",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://www.osgwiki.com/wiki/Install_Tools",
+               "visit_count": 0
+            }, {
+               "date_added": "13292759677900351",
+               "date_last_used": "0",
+               "guid": "29e50441-36ed-49c9-9466-1e1646632227",
+               "id": "17",
+               "name": "Torus debug accounts - Substrate Dev Center",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://docs.substrate.microsoft.net/docs/Security/Torus/Get-started-with-Torus/Torus-Debug-Account.html?uid=torus-debug-account",
+               "visit_count": 0
+            }, {
+               "date_added": "13292927786283092",
+               "date_last_used": "0",
+               "guid": "6c9cf6ee-55e0-4248-96ad-a82589f6c377",
+               "id": "18",
+               "name": "Handling test failures - Overview",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://microsoft.visualstudio.com/Edge/_wiki/wikis/Edge.wiki/64679/Handling-test-failures",
+               "visit_count": 0
+            }, {
+               "date_added": "13293005321894391",
+               "date_last_used": "0",
+               "guid": "83d17695-1af5-4462-99e8-bb40c9f4f647",
+               "id": "19",
+               "name": "Windows - Overview",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://microsoft.visualstudio.com/Edge/_wiki/wikis/Edge.wiki/64/Windows",
+               "visit_count": 0
+            }, {
+               "date_added": "13293014722620087",
+               "date_last_used": "0",
+               "guid": "a20969ea-1359-4749-91bd-a9e010448258",
+               "id": "20",
+               "name": "权限",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://staticsint.teams.cdn.office.net/evergreen-assets/safelinks/1/atp-safelinks.html",
+               "visit_count": 0
+            }, {
+               "date_added": "13293094591926464",
+               "date_last_used": "13310447595453682",
+               "guid": "1be5a496-8197-46a9-83f3-5f6cfdbdd3e8",
+               "id": "21",
+               "name": "Razzle - OSG Wiki",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://www.osgwiki.com/wiki/Razzle#dev_build_for_faster_build",
+               "visit_count": 0
+            }, {
+               "date_added": "13294920989185937",
+               "date_last_used": "0",
+               "guid": "69e023cc-bc4b-470b-ab21-0725cbacaa50",
+               "id": "22",
+               "name": "Morgan Stanley Access Direct - Morgan Stanley StockPlan Connect",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://stockplanconnect.morganstanley.com/index.html#/sps/spbainterstitial/548",
+               "visit_count": 0
+            }, {
+               "date_added": "13295239756602691",
+               "date_last_used": "0",
+               "guid": "8f4c3872-508f-4f7a-b3c1-ec3052715b93",
+               "id": "23",
+               "name": "Flight History | Edge Team",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://edgeteam.ms/flighting/history",
+               "visit_count": 0
+            }, {
+               "date_added": "13295586494597009",
+               "date_last_used": "0",
+               "guid": "0937ef80-3b10-48fc-ba35-0ecdac7ff73e",
+               "id": "24",
+               "name": "Connect Form - Connect",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://msconnect.microsoft.com/employee/",
+               "visit_count": 0
+            }, {
+               "date_added": "13295602845605874",
+               "date_last_used": "0",
+               "guid": "a30b827b-9887-42b2-a37d-64502806ec83",
+               "id": "25",
+               "name": "My Security Group Memberships",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://idweb.microsoft.com/IdentityManagement/aspx/groups/MyMemberships.aspx",
+               "visit_count": 0
+            }, {
+               "date_added": "13295693287301353",
+               "date_last_used": "13335621090263610",
+               "guid": "1f635113-ea15-4fa1-87bd-71826a620fbe",
+               "id": "26",
+               "name": "Quick Start Dual-engine.docx",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://microsoft.sharepoint.com/:w:/t/Edge/IQHnfUeSS0C6SpYxodOal_MMAd-c_hvaIU8Adx-u8bQAbfo",
+               "visit_count": 0
+            }, {
+               "date_added": "13294897560473990",
+               "date_last_used": "0",
+               "guid": "6c79c0d2-0acc-41bd-83a1-351d1289c558",
+               "id": "27",
+               "name": "Product Keys - Visual Studio Subscriptions Portal",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://my.visualstudio.com/ProductKeys?mkt=en-us",
+               "visit_count": 0
+            }, {
+               "date_added": "13297492602193651",
+               "date_last_used": "0",
+               "guid": "696ef816-9664-486c-95d7-2b49d7f813f5",
+               "id": "28",
+               "name": "Order Something - Microsoft Digital",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://microsoft.service-now.com/sp?id=sc_category&sys_id=c1ed15dcdbbb1490b720f337689619cd&catalog_id=24b6ddb21b11459c8b862173b24bcbb2&spa=1",
+               "visit_count": 0
+            }, {
+               "date_added": "13298135564215690",
+               "date_last_used": "0",
+               "guid": "88826bf5-d041-484b-b179-4260d669aafa",
+               "id": "29",
+               "name": "AndIE building and installation - Overview",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://microsoft.visualstudio.com/Edge/_wiki/wikis/Edge.wiki/321/AndIE-building-and-installation",
+               "visit_count": 0
+            }, {
+               "date_added": "13298660055290020",
+               "date_last_used": "13310449232300814",
+               "guid": "34a7191f-aa7d-410b-8754-7855aaaa2457",
+               "id": "30",
+               "name": "Debugging - Overview",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://microsoft.visualstudio.com/Edge/_wiki/wikis/Edge.wiki/113/Debugging",
+               "visit_count": 0
+            }, {
+               "date_added": "13299576209265474",
+               "date_last_used": "0",
+               "guid": "73bf09d8-9ccf-4e3f-b646-a999fb92c208",
+               "id": "31",
+               "name": "Servicing Validation Checklist - Overview",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://microsoft.visualstudio.com/Edge/_wiki/wikis/Edge.wiki/55268/Servicing-Validation-Checklist",
+               "visit_count": 0
+            }, {
+               "date_added": "13300780179522550",
+               "date_last_used": "0",
+               "guid": "86f481cc-3fd6-4e97-9ed0-135cec8a7d18",
+               "id": "32",
+               "name": "IE Wiki - Versioning and Document Modes",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://sharepoint/sites/IE/Resources/wiki/Wiki%20Pages/Versioning%20and%20Document%20Modes.aspx",
+               "visit_count": 0
+            }, {
+               "date_added": "13301391266855784",
+               "date_last_used": "0",
+               "guid": "34cd0db9-eae1-4504-a7a0-6a0539f791e1",
+               "id": "33",
+               "name": "edge",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "edge://compat/enterprise",
+               "visit_count": 0
+            }, {
+               "date_added": "13302606503957338",
+               "date_last_used": "13317985153538234",
+               "guid": "f80e4739-8a4b-4384-8baf-671f671d3c78",
+               "id": "34",
+               "name": "Edge Team Notebook",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://microsoft.sharepoint.com/teams/Edge/_layouts/15/Doc.aspx?sourcedoc={0e7e46a4-3e37-46c6-8aa1-291b6acca4bc}&action=edit&wd=target%28Teams%20and%20Areas%2FEnterprise%20%2B%20Security%2FDualEngine.one%7C3c44f226-6143-47d7-8fac-5afa2f13b28a%2F2022-7-14%7C450cc8ef-2a94-4f4c-a1bf-eace7ba602cc%2F%29&wdorigin=NavigationUrl",
+               "visit_count": 0
+            }, {
+               "date_added": "13314247681687185",
+               "date_last_used": "13315928321178148",
+               "guid": "bd98e451-969a-4127-9263-ac6ea7b9c5a7",
+               "id": "35",
+               "name": "Loading...",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://exp.microsoft.com/a/feature/9df9baa6-0300-4c01-8833-b7a9af593358?progressionStageId=fdba3cba-f17e-4522-820f-8f7b9cd4783a",
+               "visit_count": 0
+            }, {
+               "date_added": "13314247738804813",
+               "date_last_used": "0",
+               "guid": "490a23ea-a48d-43d3-b960-b64b764e0866",
+               "id": "36",
+               "name": "Support document mode in user list - Exp Control Tower",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://exp.microsoft.com/a/feature/9df9baa6-0300-4c01-8833-b7a9af593358?progressionStageId=fdba3cba-f17e-4522-820f-8f7b9cd4783a&workspaceId=a5766fee-9478-488b-9fc0-64d1ad72c290",
+               "visit_count": 0
+            }, {
+               "date_added": "13316596694568853",
+               "date_last_used": "0",
+               "guid": "9a7f7f47-0abb-47ee-8440-d6626ff3699d",
+               "id": "37",
+               "name": "Add Trigger event - Overview",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://microsoft.visualstudio.com/Edge/_wiki/wikis/Edge.wiki/5614/Add-Trigger-event",
+               "visit_count": 0
+            }, {
+               "date_added": "13320742544927933",
+               "date_last_used": "13330074382031875",
+               "guid": "ae95a812-8032-4911-94bf-96ccf5e743fd",
+               "id": "38",
+               "name": "Policy test",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://microsoft.visualstudio.com/Edge/_wiki/wikis/Edge.wiki/66397/How-to-Install-Anaheim-and-Chrome-Administrative-Templates-(ADMX-ADML)",
+               "visit_count": 0
+            }, {
+               "date_added": "13327141729609718",
+               "date_last_used": "0",
+               "guid": "4cea14e2-1e69-4cce-b02e-10bfa9e4e29d",
+               "id": "39",
+               "name": "Payload Tracking 686888e66: Merged PR 8877285: [Dual Engine] [PinEdge] Fix bug: The timing of the transfer w",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://edgeplt.azurewebsites.net/front?commit_id=686888e662d1410e03f6469824272f518be4d7df&repository=chromium.src",
+               "visit_count": 0
+            }, {
+               "date_added": "13327998613977633",
+               "date_last_used": "0",
+               "guid": "7f57e2c7-22af-4938-bb6c-3d4ea1c1c3ff",
+               "id": "40",
+               "name": "Pull request 7566036: Basic Process Pooling - Repos",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://microsoft.visualstudio.com/Edge/_git/chromium.src/pullrequest/7566036?_a=files&path=/content/public/browser/service_process_info.h",
+               "visit_count": 0
+            }, {
+               "date_added": "13356173465197833",
+               "date_last_used": "0",
+               "guid": "4637a615-a005-46d4-b403-3587ecfdeab5",
+               "id": "41",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "EdgeDoLCrashingPatternsInCppEdgeCode.pptx",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://microsoft.sharepoint.com/:p:/r/teams/Edge/_layouts/15/Doc.aspx?sourcedoc=%7B6C71FD18-0D73-4990-B78E-4FAC813E5F85%7D&file=EdgeDoLCrashingPatternsInCppEdgeCode.pptx&action=edit&mobileredirect=true&share=IQEY_XFscw2QSbeOT6yBPl-FAeFsHOkz2wze-bay9-YG9_g",
+               "visit_count": 0
+            }, {
+               "date_added": "13357204448163971",
+               "date_last_used": "13357997805330256",
+               "guid": "8f62bdc3-b272-465a-b148-84bc250cf169",
+               "id": "42",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "ICM dashbard",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://dev.azure.com/microsoft/Edge/_dashboards/dashboard/91850d5d-e589-469d-a775-4ff44c4dd435?teamName=a28e3dd7-06a1-4b78-a0d5-344ccbb7406b&name=dashboard",
+               "visit_count": 0
+            }, {
+               "date_added": "13357217979870966",
+               "date_last_used": "0",
+               "guid": "e8771472-154a-49ab-ad60-d679b9f8bf8d",
+               "id": "43",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "Chrome University 2018: Life of a Navigation - YouTube",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://www.youtube.com/watch?v=mX7jQsGCF6E",
+               "visit_count": 0
+            }, {
+               "date_added": "13357970041551561",
+               "date_last_used": "0",
+               "guid": "8d88c506-49af-4405-a650-167306ff42ee",
+               "id": "44",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "Adding a new policy - Overview",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://microsoft.visualstudio.com/Edge/_wiki/wikis/Edge.wiki/66386/Adding-a-new-policy",
+               "visit_count": 0
+            }, {
+               "date_added": "13358325584831913",
+               "date_last_used": "0",
+               "guid": "a0a39496-53fb-4c47-a606-e3db31fd5e87",
+               "id": "45",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "kb found",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://trackit.microsoft.com/?&Product=Server%20OS%2023H2%20(Zn)%2CWindows%2011%2023H2%2CWindows%2011%2022H2%2CWindows%20SV%2021H2%2CAzure%20Stack%20OS%2022H2%2CWindows%20Server%202022%20Hotpatch%2CWindows%20Server%202022%2CWindows%2010%2022H2%2CWindows%2010%2021H2%2CWindows%2010%2021H1%2CWindows%2010%2020H2%2CWindows%2010%202004%2CAzure%20Stack%20DataBox%20(1809)%2CWindows%2010%201809%2CWindows%2010%201607%2CWindows%2010%20RTM&Release=&Week=&Status=10%2C20&UpdateType=1%2C32768%2C32%2C64%2C4096%2C32769&GranularUpdateType=7%2C10%2C33%2C41%2C26%2C27%2C28%2C29%2C30%2C35%2C36%2C49%2C34%2C11%2C16%2C9%2C14%2C8%2C42%2C43%2C15%2C33%2C48&PreDefinedView=2&SetCustom=1&Search=KB5034127&TtglFrom=@Today%20-%201&TtglTo=@Today%20%2B%2035&SortOrder=Ttgl&nickName=&HideRecentRisk=false",
+               "visit_count": 0
+            }, {
+               "date_added": "13358325618057081",
+               "date_last_used": "0",
+               "guid": "9e799ea4-90a1-403f-b68c-abd348d97951",
+               "id": "46",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "windows pack",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://trackit.microsoft.com/payload/?Release=2024.01%20B&Duo=All&Team=All&Risk=2&Product=RS5&CpRt=48063215&RiskTypes=",
+               "visit_count": 0
+            }, {
+               "date_added": "13358496836080321",
+               "date_last_used": "0",
+               "guid": "d90d8d18-d1f1-4704-9b43-d1a485174cff",
+               "id": "47",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "Mail - Lianqiang Yang - Outlook",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://outlook.office.com/mail/",
+               "visit_count": 0
+            } ],
+            "date_added": "13291784831038679",
+            "date_last_used": "0",
+            "date_modified": "13358496836080321",
+            "guid": "93be6f89-7ca8-4511-833d-e83727bdf059",
+            "id": "6",
+            "name": "work",
+            "source": "unknown",
+            "type": "folder"
+         }, {
+            "children": [ {
+               "date_added": "13292907131058819",
+               "date_last_used": "0",
+               "guid": "c41edc9d-8482-41d1-a1e6-df7500ee86b1",
+               "id": "49",
+               "name": "GVFS Clone - OSG Wiki",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://www.osgwiki.com/wiki/GVFS_Clone",
+               "visit_count": 0
+            }, {
+               "date_added": "13292907321457172",
+               "date_last_used": "0",
+               "guid": "89a59a1f-011e-4d28-be7f-686c907a4ce6",
+               "id": "50",
+               "name": "BitLocker - OSG Wiki",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://www.osgwiki.com/wiki/BitLocker#Turn_on_BitLocker",
+               "visit_count": 0
+            }, {
+               "date_added": "13292927261792661",
+               "date_last_used": "13338443022213040",
+               "guid": "b52e0226-e14d-48ea-b69a-02c379d567f4",
+               "id": "51",
+               "name": "Introducing the Child Process Debugging Power Tool - Azure DevOps Blog",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://devblogs.microsoft.com/devops/introducing-the-child-process-debugging-power-tool/",
+               "visit_count": 0
+            }, {
+               "date_added": "13293277630729042",
+               "date_last_used": "0",
+               "guid": "78ba91d4-c598-4d06-ab91-386287476d54",
+               "id": "52",
+               "name": "Build.exe Command-Line Parameters and Settings - OSG Wiki",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://www.osgwiki.com/wiki/Build.exe_Command-Line_Parameters_and_Settings",
+               "visit_count": 0
+            }, {
+               "date_added": "13293339842119036",
+               "date_last_used": "0",
+               "guid": "e7e3a8f1-97e3-4a74-83b0-b4a97af37e31",
+               "id": "53",
+               "name": "Getting Started - Windows Desktop Development - OSG Wiki",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://www.osgwiki.com/wiki/Getting_Started_-_Windows_Desktop_Development",
+               "visit_count": 0
+            }, {
+               "date_added": "13293356114237081",
+               "date_last_used": "0",
+               "guid": "9d5deca4-1d7b-4b42-b2e5-a6867c9a6ece",
+               "id": "54",
+               "name": "CHPE Signing Validation - OSG Wiki",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://www.osgwiki.com/wiki/CHPE_Signing_Validation#Binary_signatures_differ_only_in_case",
+               "visit_count": 0
+            }, {
+               "date_added": "13293703839357467",
+               "date_last_used": "0",
+               "guid": "c2953662-ce9c-4fff-b6b0-4832b2d88217",
+               "id": "55",
+               "name": "Razzle Environment Variables - OSG Wiki",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://www.osgwiki.com/wiki/Razzle_Environment_Variables",
+               "visit_count": 0
+            }, {
+               "date_added": "13293871028809554",
+               "date_last_used": "0",
+               "guid": "90f5ab4f-7645-47d0-8f72-d2d98f34aaa3",
+               "id": "56",
+               "name": "Adding or removing a site from enterprise site list - Overview",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://microsoft.visualstudio.com/Edge/_wiki/wikis/Edge.wiki/48179/Adding-or-removing-a-site-from-enterprise-site-list",
+               "visit_count": 0
+            }, {
+               "date_added": "13293871199816134",
+               "date_last_used": "0",
+               "guid": "72784c06-53e6-403a-a61f-6efa34ba4271",
+               "id": "57",
+               "name": "[EMIE Request] for Site List Exception",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://microsoft.sharepoint.com/teams/CSMCAB/SitePages/EMIE-Request-for-Exception.aspx",
+               "visit_count": 0
+            }, {
+               "date_added": "13294149018064103",
+               "date_last_used": "0",
+               "guid": "18f98f5a-ceb1-4ff6-94d5-8645d2386c5d",
+               "id": "58",
+               "name": "Overview of inner dev loop for Dual Engine debugging - Overview",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://microsoft.visualstudio.com/Edge/_wiki/wikis/Edge.wiki/3035/Overview-of-inner-dev-loop-for-Dual-Engine-debugging",
+               "visit_count": 0
+            }, {
+               "date_added": "13294217637683200",
+               "date_last_used": "0",
+               "guid": "8511331e-8d50-4cef-8c62-9c504b8068a4",
+               "id": "59",
+               "name": "Windows远程连接Linux以及文件互传、Linux远程连接Windows、Linux之间远程连接文件互传、Windows之间的远程连接和文件互传、Windows之间网线直连传输大文件_Jack LDZ的博客-CSDN博客_windows远程访问linux文件",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://blog.csdn.net/li528405176/article/details/82825680",
+               "visit_count": 0
+            }, {
+               "date_added": "13291465656942636",
+               "date_last_used": "0",
+               "guid": "48828940-fa18-4975-9df6-30a8bbe2a135",
+               "id": "60",
+               "name": "Home",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://hcm41.sapsf.com/sf/start?_s.crb=G56Trp6Uz8a6grHQRcUCds0%252fFFzhhbxa6SUoAHOVS0U%253d#Shell-home",
+               "visit_count": 0
+            }, {
+               "date_added": "13293167797762628",
+               "date_last_used": "0",
+               "guid": "e8b2e0ee-a895-4e90-af26-11598bd1bcaf",
+               "id": "61",
+               "name": "有哪些好用的英语学习app？ - 知乎",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://www.zhihu.com/question/31110095",
+               "visit_count": 0
+            }, {
+               "date_added": "13293275765750832",
+               "date_last_used": "0",
+               "guid": "efe4a766-26a3-4dcb-abc5-dcdb5c502de4",
+               "id": "62",
+               "name": "Checkout Git Branch - OSG Wiki",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://www.osgwiki.com/wiki/Checkout_Git_Branch",
+               "visit_count": 0
+            } ],
+            "date_added": "13292907128817800",
+            "date_last_used": "0",
+            "date_modified": "13294217637683200",
+            "guid": "610619f4-19ad-40b0-8097-afe1614eddec",
+            "id": "48",
+            "name": "windows",
+            "source": "unknown",
+            "type": "folder"
+         }, {
+            "children": [ {
+               "date_added": "13294928179456786",
+               "date_last_used": "0",
+               "guid": "b970ce08-c407-4768-839f-61c2a5d2e642",
+               "id": "64",
+               "name": "Disable Internet Explorer 11 | Microsoft Docs",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://docs.microsoft.com/en-us/deployedge/edge-ie-disable-ie11",
+               "visit_count": 0
+            }, {
+               "date_added": "13295514613069995",
+               "date_last_used": "13369141817294284",
+               "guid": "b4e475fb-4cb4-4e05-86c3-67c830edf737",
+               "id": "65",
+               "name": "What's New in COM - Win32 apps | Microsoft Docs",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://docs.microsoft.com/en-us/windows/win32/com/what-s-new-in-com",
+               "visit_count": 1
+            }, {
+               "date_added": "13296810230662824",
+               "date_last_used": "0",
+               "guid": "665e8042-8b28-4f77-a1cc-3676df809940",
+               "id": "66",
+               "name": "Load Balance Beijing - Boards",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://microsoft.visualstudio.com/DefaultCollection/Edge/_queries/query/3c36c9ea-ff5d-4fc2-88be-33d5460e1033/",
+               "visit_count": 0
+            }, {
+               "date_added": "13297159293398057",
+               "date_last_used": "0",
+               "guid": "5ddb2552-bddb-420c-b74e-f7c323a76bbe",
+               "id": "67",
+               "name": "ing out and Building Chromium for Windows",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://chromium.googlesource.com/chromium/src.git/+/HEAD/docs/windows_build_instructions.md",
+               "visit_count": 0
+            }, {
+               "date_added": "13297172333417432",
+               "date_last_used": "0",
+               "guid": "bc0036c5-24e9-4fe7-8e0d-aa3b0514f106",
+               "id": "68",
+               "name": "欢迎访问中国建设银行网站",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "http://www.ccb.com/cn/home/indexv3.html",
+               "visit_count": 0
+            }, {
+               "date_added": "13297232382169563",
+               "date_last_used": "0",
+               "guid": "1dc7dc62-9297-4e9c-b31a-d014ef21c975",
+               "id": "69",
+               "name": "WebView2 SDK Release Smoke Testing - Overview",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://microsoft.visualstudio.com/Edge/_wiki/wikis/Edge.wiki/57463/WebView2-SDK-Release-Smoke-Testing",
+               "visit_count": 0
+            }, {
+               "date_added": "13297261363156352",
+               "date_last_used": "0",
+               "guid": "9f2ef8a1-6572-4414-b7a7-80c2daa8e578",
+               "id": "70",
+               "name": "Updating the NeedEdge Consumer Site List - Overview",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://microsoft.visualstudio.com/Edge/_wiki/wikis/Edge.wiki/58923/Updating-the-NeedEdge-Consumer-Site-List",
+               "visit_count": 0
+            }, {
+               "date_added": "13297315713864156",
+               "date_last_used": "0",
+               "guid": "8aa74ede-c7b9-4c5d-9bb0-f51945569b16",
+               "id": "71",
+               "name": "Share devices with Windows virtual machines | Microsoft Docs",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/user-guide/enhanced-session-mode",
+               "visit_count": 0
+            } ],
+            "date_added": "13294928176622787",
+            "date_last_used": "0",
+            "date_modified": "13297315713864156",
+            "guid": "4baeaedb-269d-40e2-bdf3-03eabf2c37a7",
+            "id": "63",
+            "name": "IE",
+            "source": "unknown",
+            "type": "folder"
+         }, {
+            "children": [ {
+               "date_added": "13301734951412944",
+               "date_last_used": "0",
+               "guid": "466d03de-88ac-4677-a329-50be8c2702c0",
+               "id": "73",
+               "name": "Top Artificial Intelligence Courses - Learn Artificial Intelligence Online | Coursera",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://www.coursera.org/search?query=artificial%20intelligence&utm_source=bg&utm_medium=sem&utm_campaign=15-GoogleDigitalMktgEComm-ROW&utm_content=B2C&campaignid=433207960&adgroupid=1222657426645134&device=c&keyword=digital%20marketing%20training%20courses&matchtype=b&network=o&devicemodel=&adpostion=&creativeid=&hide_mobile_promo=&msclkid=04500a2ecfd11c17b82d68e9040dea49&utm_term=digital%20marketing%20training%20courses",
+               "visit_count": 0
+            }, {
+               "date_added": "13301735084662791",
+               "date_last_used": "13369989604463006",
+               "guid": "0bf67862-9a91-49e1-a9af-cae60e8dcacf",
+               "id": "74",
+               "name": "Search | MIT OpenCourseWare | Free Online Course Materials",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://ocw.mit.edu/search/?d=Electrical+Engineering+and+Computer+Science",
+               "visit_count": 1
+            }, {
+               "date_added": "13301735867076873",
+               "date_last_used": "0",
+               "guid": "923cf731-2726-4260-aa51-4a35736a6f6b",
+               "id": "75",
+               "meta_info": {
+                  "edge_thumbnail": "https://microsoft.visualstudio.com/90b2a23c-cab8-4e7c-90e7-a977f32c1f5d/_apis/git/repositories/d094117b-1fb6-4280-89aa-22b224989837/Items?path=/.attachments/merge-example2-bfc4b618-05f4-47a5-9d5f-c243a3f7865a.PNG&download=false&resolveLfs=true&%24format=octetStream&api-version=5.0-preview.1&sanitize=true&versionDescriptor.version=wikiMaster"
+               },
+               "name": "Merge Conflicts - Overview",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://microsoft.visualstudio.com/Edge/_wiki/wikis/Edge.wiki/3117/Merge-Conflicts?anchor=deps-file-issues",
+               "visit_count": 0
+            }, {
+               "date_added": "13303187431498496",
+               "date_last_used": "13326792090457610",
+               "guid": "cd6604dd-97e9-446f-a241-8e28189f5643",
+               "id": "76",
+               "name": "美国教学",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://www.khanacademy.org/ela/cc-2nd-reading-vocab/xfb4fc0bf01437792:cc-2nd-fairy-tales-retold",
+               "visit_count": 0
+            }, {
+               "date_added": "13305104301533411",
+               "date_last_used": "0",
+               "guid": "c9877e87-43d0-44e1-a320-e7bf6845cb77",
+               "id": "77",
+               "name": "语法大全！20张图，彻底分清英语中的主、谓、宾、定、状、补 - 知乎",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://zhuanlan.zhihu.com/p/136898829",
+               "visit_count": 0
+            }, {
+               "date_added": "13305166639822277",
+               "date_last_used": "13369989604989107",
+               "guid": "47e5d7e7-aea7-4826-9e9a-dfba7c604cf2",
+               "id": "78",
+               "name": "Rosetta Stone® Language-Learning Software",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://login.rosettastone.com/#/login",
+               "visit_count": 1
+            }, {
+               "date_added": "13305815544319735",
+               "date_last_used": "0",
+               "guid": "3cb85771-03d4-43d8-b49c-8b767e98721f",
+               "id": "79",
+               "name": "Watch 'July 20, 2022 Edge Intern Q&A with Rajesh Sundaram' | Microsoft Stream",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://msit.microsoftstream.com/video/eac90840-98dc-bd6c-0d69-f1ed0872c35f?channelId=d232a4ff-0400-96d0-25b6-f1ea8a6e75c6&App=msteamsBot&refId=f:c83769ed-da33-481e-a8c0-abf15de50913&referrer=https:%2F%2Fstatics.teams.cdn.office.net%2F",
+               "visit_count": 0
+            }, {
+               "date_added": "13305815667744185",
+               "date_last_used": "13369989613639587",
+               "guid": "73d93dc3-9130-4218-9208-4bffea78b952",
+               "id": "80",
+               "name": "Edge Monthly Day of Learning",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://microsoft.sharepoint.com/teams/Edge/SitePages/EMDoL-Home.aspx",
+               "visit_count": 1
+            }, {
+               "date_added": "13308722562995826",
+               "date_last_used": "0",
+               "guid": "d4f50482-079c-42d8-8a18-47706bccd7c5",
+               "id": "81",
+               "name": "Pipelines - Run refs_heads_int_cr_22-09-21-A_main_25 logs",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://microsoft.visualstudio.com/Edge/_build/results?buildId=56678268&view=logs&j=839a2c0b-ff8c-5a70-37a8-2102cca63f8a&t=628dbdc3-f46d-5e71-761d-7fdf6c0d7934&l=4735",
+               "visit_count": 0
+            }, {
+               "date_added": "13331013162412161",
+               "date_last_used": "13334812307465083",
+               "guid": "305c794b-4fd4-4fe2-924e-0a5d40af9007",
+               "id": "82",
+               "name": "Measuring rectangles with different unit squares (video) | Khan Academy",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://www.khanacademy.org/math/basic-geo/basic-geo-area-and-perimeter/x7fa91416:count-unit-squares-to-find-area/v/measuring-the-same-rectangle-with-different-unit-squares",
+               "visit_count": 0
+            }, {
+               "date_added": "13345266554440535",
+               "date_last_used": "0",
+               "guid": "10c53ee0-567b-4c67-acce-8adcf78353b1",
+               "id": "83",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "/əʊ/ - the OH Vowel - Pronunciation Studio",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://pronunciationstudio.com/oh-vowel-sound/",
+               "visit_count": 0
+            }, {
+               "date_added": "13346910639820713",
+               "date_last_used": "0",
+               "guid": "d758f1de-7d2c-4163-a7d1-7599975431cb",
+               "id": "84",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "短元音ɪ(i)的发音方法,英语音标ɪ(i)怎么读？",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://en-yinbiao.xiao84.com/yinbiaofayin/i-sound.html",
+               "visit_count": 0
+            } ],
+            "date_added": "13301734968217685",
+            "date_last_used": "0",
+            "date_modified": "13346910639820713",
+            "guid": "6e60595e-fa36-4925-8d24-aa73d637864b",
+            "id": "72",
+            "name": "study",
+            "source": "unknown",
+            "type": "folder"
+         }, {
+            "children": [ {
+               "date_added": "13301750347904674",
+               "date_last_used": "13314248832645205",
+               "guid": "0b8d0dbd-4150-414c-a46c-c9b2a802d04b",
+               "id": "86",
+               "name": "Advanced Incidents Search - IcM",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://portal.microsofticm.com/imp/v3/incidents/search/advanced",
+               "visit_count": 0
+            }, {
+               "date_added": "13313056819607877",
+               "date_last_used": "13331201046851750",
+               "guid": "0e344353-c741-4519-aecf-3f8477a35c4b",
+               "id": "87",
+               "name": "Advanced Incidents Search - IcM",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://portal.microsofticm.com/imp/v3/incidents/search/advanced?sl=wsvozeqcaan",
+               "visit_count": 0
+            }, {
+               "date_added": "13326542421576950",
+               "date_last_used": "13369134638976718",
+               "guid": "45c30266-c746-425e-8ff7-62785199fa12",
+               "id": "88",
+               "name": "Older versions of Microsoft Edge (Windows) | Uptodown",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://microsoft-edge.en.uptodown.com/windows/versions",
+               "visit_count": 1
+            }, {
+               "date_added": "13332331242736032",
+               "date_last_used": "0",
+               "guid": "90232943-6d0c-44e7-bfaf-cac3f21a9d4a",
+               "id": "89",
+               "name": "chromium documentation - YouTube",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://www.youtube.com/results?search_query=chromium+documentation",
+               "visit_count": 0
+            }, {
+               "date_added": "13333098856091802",
+               "date_last_used": "0",
+               "guid": "f4d6cefc-b1fd-4454-bb18-9402953c1d79",
+               "id": "90",
+               "name": "父爱如山",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://chat.openai.com/c/f7bd27d5-0024-4d48-bc16-ae923589db43",
+               "visit_count": 0
+            }, {
+               "date_added": "13333516495370255",
+               "date_last_used": "0",
+               "guid": "a308ce80-567b-4cb3-a5f8-dd56fa58bcea",
+               "id": "91",
+               "name": "Zuck aims a killer blow at Musk outside the cage with Meta's new Threads Twitter clone",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://www.msn.com/en-us/news/technology/zuck-aims-a-killer-blow-at-musk-outside-the-cage-with-metas-new-threads-twitter-clone/ar-AA1dq7xJ",
+               "visit_count": 0
+            }, {
+               "date_added": "13334306433125624",
+               "date_last_used": "0",
+               "guid": "d2a475ee-1cbd-4f70-987c-7824b4580dc7",
+               "id": "92",
+               "name": "ensnet.ml/Example.html?i=2",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "http://ensnet.ml/Example.html?i=2",
+               "visit_count": 0
+            }, {
+               "date_added": "13343985718085693",
+               "date_last_used": "0",
+               "guid": "05ecff03-d7ea-4396-97d2-6fdb8345f4ec",
+               "id": "93",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "CI-Repro-Lab - Microsoft Azure",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://ms.portal.azure.com/#@microsoft.onmicrosoft.com/resource/subscriptions/333e402a-65a0-45a9-8e23-867ca146c290/resourceGroups/CI-Repro-Lab-RG/providers/Microsoft.DevTestLab/labs/CI-Repro-Lab/overview",
+               "visit_count": 0
+            }, {
+               "date_added": "13349788791164740",
+               "date_last_used": "0",
+               "guid": "e10be338-74ca-4997-b077-c3a5dbca601c",
+               "id": "94",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "Commit a85896d0: Merged PR 3530927: Updates for better close UX... - Repos",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://microsoft.visualstudio.com/Edge/_git/chromium.src/commit/a85896d0722cdcc89de21f9f02d5aafd31efd9ad?refName=refs/heads/main&_a=contents&path=/chrome/browser/ui/hung_renderer/hung_renderer_core.cc",
+               "visit_count": 0
+            }, {
+               "date_added": "13352699798493730",
+               "date_last_used": "0",
+               "guid": "db8a9857-2be3-426b-bd73-27aefe9dae8b",
+               "id": "95",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "英文邮件中的“暗语”缩写：TBD、TBC、EOD、都是什么意思？ - 知乎",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://zhuanlan.zhihu.com/p/113646757",
+               "visit_count": 0
+            } ],
+            "date_added": "13301750337255725",
+            "date_last_used": "0",
+            "date_modified": "13352699798493730",
+            "guid": "b5fc6208-e27c-474a-9d83-299b70aa1c60",
+            "id": "85",
+            "name": "ICM",
+            "source": "unknown",
+            "type": "folder"
+         }, {
+            "date_added": "13303462355120059",
+            "date_last_used": "13317297732219392",
+            "guid": "2953cfde-d59d-4653-bc1c-78bcf9af117c",
+            "id": "96",
+            "name": "getDisplayMedia",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://webrtc.github.io/samples/src/content/getusermedia/getdisplaymedia/",
+            "visit_count": 1
+         }, {
+            "date_added": "13310120602187371",
+            "date_last_used": "0",
+            "guid": "dfd9e3eb-e5f0-4b2c-a195-d532953a16ca",
+            "id": "97",
+            "name": "pop.html",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "file:///C:/Users/lianqyang/Desktop/pop.html",
+            "visit_count": 0
+         }, {
+            "date_added": "13310622049914271",
+            "date_last_used": "13346927968570826",
+            "guid": "2f02d011-ad74-4a83-989b-dea47bed65ff",
+            "id": "98",
+            "name": "Node test",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "file:///C:/Users/lianqyang/Desktop/node.html",
+            "visit_count": 0
+         }, {
+            "date_added": "13353400958425358",
+            "date_last_used": "0",
+            "guid": "b33dfa02-5a5b-4554-9000-da50d2e3a811",
+            "id": "99",
+            "name": "",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "file:///D:/contact/qwe5.pdf",
+            "visit_count": 0
+         }, {
+            "date_added": "13311675279981387",
+            "date_last_used": "13371722712065702",
+            "guid": "d7d742a4-b2c8-46eb-988f-3b843d45cd1b",
+            "id": "100",
+            "name": "Pipelines - Run 20221030.2003 logs",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://microsoft.visualstudio.com/Edge/_build/results?buildId=58623053&view=logs&j=5cce5528-e58c-515d-d990-cbc98e788e3b&t=6622c312-2e7e-5716-4a12-e6b22070a976",
+            "visit_count": 1
+         }, {
+            "date_added": "13311699544578912",
+            "date_last_used": "13371722654207018",
+            "guid": "48caa1e8-5593-4753-8231-90c2808b44d2",
+            "id": "101",
+            "name": "GitHub - chromium/chromium: The official GitHub mirror of the Chromium source",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://github.com/chromium/chromium",
+            "visit_count": 2
+         }, {
+            "date_added": "13312437831995292",
+            "date_last_used": "13388657573678453",
+            "guid": "2a6eeb51-4f5a-4289-b0ef-bd524a5ba920",
+            "id": "102",
+            "name": "electron/build-instructions-gn.md at main · electron/electron · GitHub",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://github.com/electron/electron/blob/main/docs/development/build-instructions-gn.md",
+            "visit_count": 2
+         }, {
+            "children": [ {
+               "date_added": "13328677430140509",
+               "date_last_used": "13374572110043643",
+               "guid": "eb71e538-29df-47cb-aba8-dddf468f5902",
+               "id": "104",
+               "name": "Edge ES Payload Tracking",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://edgeplt.azurewebsites.net/front",
+               "visit_count": 1
+            }, {
+               "date_added": "13334833140364547",
+               "date_last_used": "0",
+               "guid": "04913f28-3f15-4cef-903e-1724746a58b8",
+               "id": "105",
+               "name": "Working...",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://login.microsoftonline.com/72f988bf-86f1-41af-91ab-2d7cd011db47/oauth2/v2.0/authorize?response_type=code+id_token&redirect_uri=https%3a%2f%2fedgeteam.ms%2f.auth%2flogin%2faad%2fcallback&client_id=6cb9fe45-ffbf-47da-86cd-5d4fb1a38c15&scope=openid+profile+email+offline_access&response_mode=form_post&nonce=05e54707b82a4e1bb36dbe96c5eb37aa_20230726082357&state=redir%3d%252Frelease-dates&sso_nonce=AwABAAEAAAACAOz_BQD0_-AzAVNEPF3f84CWrkVNQVvS_uPn1uPOhandxYAm8EHpK8TZaPUWxilY8XTfiUm7Dsby95PZ3eC2xdoUuTroVjwgAA&client-request-id=ecea904d-38b1-4936-9e41-eeda79789e89&mscrid=ecea904d-38b1-4936-9e41-eeda79789e89",
+               "visit_count": 0
+            }, {
+               "date_added": "13334840098767043",
+               "date_last_used": "13391228029416198",
+               "guid": "fdd2b164-f0a3-42a7-a5b0-66948e390b7b",
+               "id": "106",
+               "name": "Pull requests - Repos",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://microsoft.visualstudio.com/Edge/_git/chromium.src/pullrequests?_a=mine",
+               "visit_count": 305
+            }, {
+               "date_added": "13335934913251825",
+               "date_last_used": "13370341167937163",
+               "guid": "d2d286b1-7c73-4e81-ad50-2fd7c150b508",
+               "id": "107",
+               "name": "Release Dates | Edge Team",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://edgeteam.ms/release-dates",
+               "visit_count": 2
+            }, {
+               "date_added": "13335946626937812",
+               "date_last_used": "0",
+               "guid": "7f15cc8e-ac2b-45d9-97e5-418165327bf3",
+               "id": "108",
+               "name": "Desktop Browser Market Share China | Statcounter Global Stats",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://gs.statcounter.com/browser-market-share/desktop/china",
+               "visit_count": 0
+            }, {
+               "date_added": "13336228933875691",
+               "date_last_used": "0",
+               "guid": "eb381917-c8b7-4f54-bcaa-a40ff9352b95",
+               "id": "109",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "网易",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://www.163.com/",
+               "visit_count": 0
+            }, {
+               "date_added": "13336467518795303",
+               "date_last_used": "0",
+               "guid": "612e5ead-9745-40e3-9f95-09b0dd51cc25",
+               "id": "110",
+               "name": "SetImage - Search Code - Search",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://microsoft.visualstudio.com/Edge/_search?action=contents&text=SetImage&type=code&lp=code-Project&filters=ProjectFilters%7BEdge%7DRepositoryFilters%7Bchromium.src%7D&pageSize=25&includeFacets=false&result=DefaultCollection/Edge/chromium.src/GBmain//chrome/browser/ui/views/autofill/edge_travel/travel_bubble_view.cc",
+               "visit_count": 0
+            }, {
+               "date_added": "13336471293643251",
+               "date_last_used": "0",
+               "guid": "108bcc07-a029-43c5-8c33-e6e83f9f93ea",
+               "id": "111",
+               "name": "Long COVID is devastating and far from rare. As infections rise again, why are we still ignoring it?",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://www.msn.com/en-us/health/medical/long-covid-is-devastating-and-far-from-rare-as-infections-rise-again-why-are-we-still-ignoring-it/ar-AA1fdsFK?ocid=entnewsntp&cvid=5a4226f4bb894fbba0d960c47ba0a5a1&ei=14",
+               "visit_count": 0
+            }, {
+               "date_added": "13313558630865126",
+               "date_last_used": "13315976643722786",
+               "guid": "04e0c7cf-a546-45fd-b840-c82f73e95379",
+               "id": "112",
+               "name": "window git",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://microsoft.visualstudio.com/OS/_git/os.2020/pullrequest/8000534",
+               "visit_count": 0
+            }, {
+               "date_added": "13337695950712579",
+               "date_last_used": "0",
+               "guid": "347cfff0-a5ac-419b-90a5-66faad12db2c",
+               "id": "113",
+               "name": "Markdown syntax for wikis - Azure DevOps | Microsoft Learn",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://learn.microsoft.com/en-us/azure/devops/project/wiki/wiki-markdown-guidance?view=azure-devops",
+               "visit_count": 0
+            }, {
+               "date_added": "13337745027854417",
+               "date_last_used": "13342674830854169",
+               "guid": "305106a9-06e7-4ff4-b087-beeb256189af",
+               "id": "114",
+               "name": "msvacation.microsoft.com",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://msvacation.microsoft.com/",
+               "visit_count": 0
+            }, {
+               "date_added": "13338898757695559",
+               "date_last_used": "0",
+               "guid": "187f3d31-91c4-4c29-8e0b-585304b32c33",
+               "id": "115",
+               "name": "Develop in WSL2 - Overview",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://microsoft.visualstudio.com/Edge/_wiki/wikis/Edge.wiki/72103/Develop-in-WSL2",
+               "visit_count": 0
+            }, {
+               "date_added": "13353477827951041",
+               "date_last_used": "0",
+               "guid": "a8ab8318-8b44-4f0e-b822-e575619d8dc1",
+               "id": "116",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "RE&F Mail - Power Apps",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://apps.powerapps.com/play/e/640ba8cb-e4e5-435e-9d6c-545995ed2d5f/a/72aa6899-8f68-41a2-9bde-e5bad791731d?tenantId=72f988bf-86f1-41af-91ab-2d7cd011db47&sourcetime=2023-08-14%2003%3A03%3A35Z&source=portal",
+               "visit_count": 0
+            }, {
+               "date_added": "13355479771304922",
+               "date_last_used": "0",
+               "guid": "c6f1e20f-5896-4c69-a24f-25a0b884ab34",
+               "id": "117",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "HackBox - E+D Divisional FHL - March 2024 - Microsoft Teams + Microsoft Edge Workspaces",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://hackbox.microsoft.com/hackathons/ExDDivisionalFHLMarch2024/project/56488",
+               "visit_count": 0
+            }, {
+               "date_added": "13355481093450831",
+               "date_last_used": "0",
+               "guid": "046ce3b6-333f-442c-ab4f-7038a695840f",
+               "id": "118",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "SPIKE中文(简体)翻译：剑桥词典",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://dictionary.cambridge.org/zhs/%E8%AF%8D%E5%85%B8/%E8%8B%B1%E8%AF%AD-%E6%B1%89%E8%AF%AD-%E7%AE%80%E4%BD%93/spike",
+               "visit_count": 0
+            }, {
+               "date_added": "13344003825505693",
+               "date_last_used": "0",
+               "guid": "d22f6a9b-d76f-4c79-8afd-89de83e082b5",
+               "id": "119",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "Enterprise Team Cherry Pick Process to Stable - Overview",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://microsoft.visualstudio.com/Edge/_wiki/wikis/Edge.wiki/86394/Enterprise-Team-Cherry-Pick-Process-to-Stable",
+               "visit_count": 0
+            }, {
+               "date_added": "13361620566304656",
+               "date_last_used": "0",
+               "guid": "50d53990-b528-4284-be4f-0685aae5d766",
+               "id": "120",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "Writing a Pull Request Description - Overview",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://microsoft.visualstudio.com/Edge/_wiki/wikis/Edge.wiki/119797/Writing-a-Pull-Request-Description",
+               "visit_count": 0
+            }, {
+               "date_added": "13361868125574121",
+               "date_last_used": "0",
+               "guid": "cab758ef-7968-41c4-a1ed-fac8f1066f0a",
+               "id": "121",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "Microsoft Edge Reliability - [Experimentation Dash]",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://titanweb.microsoft.com/superset/dashboard/10134/",
+               "visit_count": 0
+            }, {
+               "date_added": "13362114214302698",
+               "date_last_used": "0",
+               "guid": "997954e8-1991-48a5-a668-843d8c55ec2a",
+               "id": "122",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "FIDO2 for PoP | M365 Secure Code",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://eng.ms/docs/microsoft-security/digital-security-and-resilience/m365-security-engineering/m365-secure-code/m365-secure-code/fido2-pop/fido2-pop-wiki#preparation",
+               "visit_count": 1
+            }, {
+               "date_added": "13363862376899220",
+               "date_last_used": "0",
+               "guid": "ee67a823-93cd-41d1-9af6-10053142bb3f",
+               "id": "123",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "Summary - Overview",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://microsoft.visualstudio.com/IXPTools",
+               "visit_count": 1
+            }, {
+               "date_added": "13364532097809526",
+               "date_last_used": "0",
+               "guid": "166b49e5-ac98-45bf-8775-cd9def9ecb19",
+               "id": "124",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "Bug 51903600: [MTP 24-07B]- [ZN,FE,VB] [ClientEnterprise_X64][Edge -IE_Mode][Manual Testing] - In IE_Mode, Sites under “Favorites” option are ... - Boards",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://microsoft.visualstudio.com/OS/_workitems/edit/51903600",
+               "visit_count": 1
+            }, {
+               "date_added": "13366798764607930",
+               "date_last_used": "0",
+               "guid": "bbe1e0c8-ebe1-401b-abec-cb50ce48a3b9",
+               "id": "125",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "shared-function-info-inl.h - Chromium Code Search",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://source.chromium.org/chromium/chromium/src/+/main:v8/src/objects/shared-function-info-inl.h?q=kFunctionDataOffset&ss=chromium%2Fchromium%2Fsrc&start=11",
+               "visit_count": 0
+            }, {
+               "date_added": "13367386629950542",
+               "date_last_used": "0",
+               "guid": "ddcd37e4-348a-4f58-8677-9a5d738447ca",
+               "id": "126",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "Snr build.docx",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://microsoftapc-my.sharepoint.com/:w:/g/personal/toniyang_microsoft_com/Efs5UJ8PX-FNkKcuVp4dg7oBbSK3mTvPMDS2v7ksGxtoiA?e=Mv8s1c&isSPOFile=1&clickparams=eyJBcHBOYW1lIjoiVGVhbXMtRGVza3RvcCIsIkFwcFZlcnNpb24iOiI0OS8yNDA3MTEyODgyMyIsIkhhc0ZlZGVyYXRlZFVzZXIiOmZhbHNlfQ%3D%3D",
+               "visit_count": 1
+            }, {
+               "date_added": "13367558038726515",
+               "date_last_used": "0",
+               "guid": "644c461e-5577-4870-876f-6a2873b96b62",
+               "id": "127",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "Albert Stanley, 1st Baron Ashfield - Wikipedia",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://en.wikipedia.org/wiki/Albert_Stanley,_1st_Baron_Ashfield",
+               "visit_count": 0
+            }, {
+               "date_added": "13369391018724044",
+               "date_last_used": "0",
+               "guid": "e491c1da-f1e3-48f8-949e-3b611a1fd5ee",
+               "id": "128",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "chrome_content_browser_client.cc - Chromium Code Search",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://source.chromium.org/chromium/chromium/src/+/507b56f34c6bfa9190b1a8fbf206f7f05286b189:chrome/browser/chrome_content_browser_client.cc;dlc=741ad790829b74e8ce0f9dd32cde60ea5d545d4f",
+               "visit_count": 1
+            }, {
+               "date_added": "13373709610189718",
+               "date_last_used": "0",
+               "guid": "7439fe76-6a8d-44b9-9c72-c6772df31f7f",
+               "id": "129",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "BCEFunnel.DailyActiveUsers.script - Repos",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://microsoft.visualstudio.com/Edge/_git/edgeinternal.datapipeline.workflows?path=/Lens/EdgeAnaheim/Jobs/BCEFunnel/BCEFunnel.DailyActiveUsers.script&_a=contents&version=GBmaster",
+               "visit_count": 1
+            } ],
+            "date_added": "13334812516658277",
+            "date_last_used": "0",
+            "date_modified": "13373709610189718",
+            "guid": "26cb94e4-9360-4f85-9c03-70fc7f433f99",
+            "id": "103",
+            "name": "release",
+            "source": "unknown",
+            "type": "folder"
+         }, {
+            "date_added": "13339058264855979",
+            "date_last_used": "0",
+            "guid": "48441eb2-4ddb-45ba-878d-9211a216a7b0",
+            "id": "130",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "What Is My IP Address - See Your Public Address - IPv4 & IPv6",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://whatismyipaddress.com/",
+            "visit_count": 0
+         }, {
+            "date_added": "13339130503217656",
+            "date_last_used": "0",
+            "guid": "a96af838-9375-4b56-b27d-e063e18f2e2d",
+            "id": "131",
+            "name": "Android - Overview",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://microsoft.visualstudio.com/Edge/_wiki/wikis/Edge.wiki/52/Android",
+            "visit_count": 0
+         }, {
+            "date_added": "13292304829171925",
+            "date_last_used": "0",
+            "guid": "7b209ab6-631d-4ebe-9d6d-a911dd9d9002",
+            "id": "132",
+            "name": "chromium/src - Chromium Code Search",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://source.chromium.org/chromium/chromium/src",
+            "visit_count": 0
+         }, {
+            "children": [ {
+               "date_added": "13339577243103605",
+               "date_last_used": "13357992246482194",
+               "guid": "1f678c43-111c-43c6-9aaf-be6e65502dfa",
+               "id": "134",
+               "meta_info": {
+                  "edge_thumbnail": "https://microsoft.visualstudio.com/90b2a23c-cab8-4e7c-90e7-a977f32c1f5d/_apis/git/repositories/d094117b-1fb6-4280-89aa-22b224989837/Items?path=/.attachments/image-249fad45-06cf-4e15-9ad9-8991e34f7389.png&download=false&resolveLfs=true&%24format=octetStream&api-version=5.0-preview.1&sanitize=true&versionDescriptor.version=wikiMaster",
+                  "power_bookmark_meta": ""
+               },
+               "name": "How to Debug C or C++ on Chromium on WSL - Overview",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://microsoft.visualstudio.com/Edge/_wiki/wikis/Edge.wiki/95148/How-to-Debug-C-or-C-on-Chromium-on-WSL",
+               "visit_count": 0
+            }, {
+               "date_added": "13339585270128571",
+               "date_last_used": "0",
+               "guid": "fa86ae37-0ef2-4739-93ef-819e9809c2d7",
+               "id": "135",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "英语音标发音表-英语48个音标在线读",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://www.jiwake.com/yinbiaofayin/",
+               "visit_count": 0
+            }, {
+               "date_added": "13341486062653177",
+               "date_last_used": "0",
+               "guid": "2b973b60-6f66-4611-801e-821b70e016be",
+               "id": "136",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "Inside Microsoft’s surprise decision to work with Google on its Edge browser - The Verge",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://www.theverge.com/2019/5/6/18527550/microsoft-chromium-edge-google-history-collaboration",
+               "visit_count": 0
+            } ],
+            "date_added": "13339577266712415",
+            "date_last_used": "0",
+            "date_modified": "13341486062653177",
+            "guid": "13f7b7c2-3a05-4391-b891-f705026e3d75",
+            "id": "133",
+            "name": "android",
+            "source": "unknown",
+            "type": "folder"
+         }, {
+            "children": [ {
+               "date_added": "13361351774149628",
+               "date_last_used": "0",
+               "guid": "77d4c072-8c4a-4289-a9fa-6333a34c6184",
+               "id": "138",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "MSR (Monthly Service Review)-20240514_160648-Meeting Recording.mp4",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://microsoft-my.sharepoint-df.com/personal/davewood_microsoft_com/_layouts/15/stream.aspx?id=%2Fpersonal%2Fdavewood_microsoft_com%2FDocuments%2FRecordings%2FMSR%20%28Monthly%20Service%20Review%29-20240514_160648-Meeting%20Recording%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E0806d96d-155f-4913-9def-82d9127a17b5&ga=1&gaS=9",
+               "visit_count": 0
+            }, {
+               "date_added": "13361351797059928",
+               "date_last_used": "13361361057009152",
+               "guid": "8cb1a565-9dd7-44e0-9a8f-6a3d4d75ffce",
+               "id": "139",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "MSR (Monthly Service Review)-20240514_160648-Meeting Recording.mp4",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://microsoft-my.sharepoint-df.com/personal/davewood_microsoft_com/_layouts/15/stream.aspx?id=%2Fpersonal%2Fdavewood%5Fmicrosoft%5Fcom%2FDocuments%2FRecordings%2FMSR%20%28Monthly%20Service%20Review%29%2D20240514%5F160648%2DMeeting%20Recording%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E0806d96d%2D155f%2D4913%2D9def%2D82d9127a17b5&ga=1&gaS=9",
+               "visit_count": 0
+            }, {
+               "date_added": "13383468264549463",
+               "date_last_used": "0",
+               "guid": "15009e31-23f3-413e-9ee6-c6c4977f28f6",
+               "id": "140",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "Debugging - Overview",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://microsoft.visualstudio.com/Edge/_wiki/wikis/Edge.wiki/129990/Debugging",
+               "visit_count": 1
+            }, {
+               "date_added": "13383468946565365",
+               "date_last_used": "0",
+               "guid": "29f1d587-5e65-4d9a-b6ce-00e62874e615",
+               "id": "141",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "Dual Engine Developer Onboarding - Overview",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://microsoft.visualstudio.com/Edge/_wiki/wikis/Edge.wiki/86400/Dual-Engine-Developer-Onboarding",
+               "visit_count": 1
+            }, {
+               "date_added": "13384610508144595",
+               "date_last_used": "0",
+               "guid": "97b135de-e05d-4666-82f1-c82233b1af2b",
+               "id": "142",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "README.md - Repos",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://dev.azure.com/microsoft/Edge/_git/edge.shoreline_testing?path=%2FREADME.md&_a=preview&anchor=getting-started",
+               "visit_count": 1
+            }, {
+               "date_added": "13387894380469436",
+               "date_last_used": "0",
+               "guid": "01ef5c1c-c6eb-4207-bd5d-5de1a2e451dc",
+               "id": "143",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "Histogram Explorer | Edge Team",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://edgeteam.ms/histogram-explorer?histogramId=-8438115935030145864&daysBack=90&oscategory=all",
+               "visit_count": 1
+            }, {
+               "date_added": "13388745290798364",
+               "date_last_used": "0",
+               "guid": "3e757a50-1925-4c0e-bf29-42dbdbf7c34e",
+               "id": "144",
+               "name": "Microsoft Loop",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://loop.cloud.microsoft/p/eyJ1IjoiaHR0cHM6Ly9taWNyb3NvZnQuc2hhcmVwb2ludC1kZi5jb20vY29udGVudHN0b3JhZ2UvQ1NQX2UzZjlmZWZiLTgxNjEtNGM5NS05M2IyLWE0ZDc0MjAwZTM3Yz9uYXY9Y3owbE1rWmpiMjUwWlc1MGMzUnZjbUZuWlNVeVJrTlRVRjlsTTJZNVptVm1ZaTA0TVRZeExUUmpPVFV0T1ROaU1pMWhOR1EzTkRJd01HVXpOMk1tWkQxaUpUSXhMVjgzTlRReVIwSnNWWGxVYzNGVVdGRm5SR3BtU0dWM05rY3dhVFp0YUV4eWFXWlhibE01TTFRNVpFVmhiRjluVTBKbllWRndYMEpXUXpWMFVWRnJWeVptUFRBeE5FWTBUVTFLUkZORVVrVlhURU5WU0ZsS1FsbzBOVXBXVlVaWlVrRlVOVWNtWXowbE1rWW1ZVDFNYjI5d1FYQncifQ%3D%3D?ct=1744271684053&&LOF=1",
+               "visit_count": 1
+            }, {
+               "date_added": "13388749410510963",
+               "date_last_used": "0",
+               "guid": "b5f09562-92f1-4224-ba8f-10ed58534348",
+               "id": "145",
+               "name": "1JS - Repos",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://office.visualstudio.com/Office/_git/1JS",
+               "visit_count": 1
+            }, {
+               "date_added": "13389089152892569",
+               "date_last_used": "13391140163104607",
+               "guid": "b7b5b43c-2590-4efa-ad1a-40c049359226",
+               "id": "146",
+               "name": "Edge Data Access Group under EO 14117 - Overview",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://microsoft.visualstudio.com/Edge/_wiki/wikis/Edge.wiki/199444/Edge-Data-Access-Group-under-EO-14117",
+               "visit_count": 14
+            }, {
+               "date_added": "13389176991020557",
+               "date_last_used": "0",
+               "guid": "d297b09e-b12a-4d12-b7b2-c2869d28d493",
+               "id": "147",
+               "name": "Prepare Data to be Queryable in Skydrill (Presto) - Overview",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://microsoft.visualstudio.com/Edge/_wiki/wikis/Edge.wiki/65733/Prepare-Data-to-be-Queryable-in-Skydrill-(Presto)?anchor=**automatically-create-interactive-tables-over-cosmos**-(automatic/easy)",
+               "visit_count": 1
+            }, {
+               "date_added": "13389441662546658",
+               "date_last_used": "0",
+               "guid": "5675f6b5-39f5-4dee-b1cd-d98b3c7b743b",
+               "id": "148",
+               "name": "TextFragmentSelectorGenerator - Search Code - Search",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://microsoft.visualstudio.com/Edge/_search?action=contents&text=TextFragmentSelectorGenerator&type=code&lp=code-Project&filters=ProjectFilters%7BEdge%7DRepositoryFilters%7Bchromium.src%7D&pageSize=25&includeFacets=false&result=DefaultCollection/Edge/chromium.src/GBmain//third_party/blink/renderer/core/fragment_directive/text_fragment_selector_generator.h",
+               "visit_count": 1
+            }, {
+               "date_added": "13389442963329885",
+               "date_last_used": "0",
+               "guid": "b4faaa80-5109-4dd1-9c04-e7c2b575e6b1",
+               "id": "149",
+               "name": "GetDocumentBodyUtil - Search Code - Search",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://microsoft.visualstudio.com/Edge/_search?action=contents&text=GetDocumentBodyUtil&type=code&lp=code-Project&filters=ProjectFilters%7BEdge%7DRepositoryFilters%7Bchromium.src%7D&pageSize=25&includeFacets=false&result=DefaultCollection/Edge/chromium.src/GBmain//third_party/blink/renderer/core/editing/edge_underside_text_extraction/underside_text_extraction_utils.cc",
+               "visit_count": 1
+            }, {
+               "date_added": "13389693812215112",
+               "date_last_used": "0",
+               "guid": "8eda9dcd-e312-4c6d-b96c-fed905be062f",
+               "id": "150",
+               "name": "URL Fragment Text Directives",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://wicg.github.io/scroll-to-text-fragment/#ref-for-range-collapsed:~:text=Let-,potentialMatch",
+               "visit_count": 1
+            }, {
+               "date_added": "13389694601633896",
+               "date_last_used": "0",
+               "guid": "82773e83-cdf5-4281-85e9-246146e5f76b",
+               "id": "151",
+               "name": "MCP Server Integration",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://chatgpt.com/c/6805de74-ee8c-800f-a6f4-728327513af2",
+               "visit_count": 1
+            }, {
+               "date_added": "13391144288117732",
+               "date_last_used": "13391160722548652",
+               "guid": "1bc4188a-4933-409a-a20f-b199b145d307",
+               "id": "171",
+               "name": "Job win_x64_debug-Win10 Tests x64 (dbg)-edge-rolling-incremental-win_x64_debug-122040973.122042819.1 - Shard 3e9201b08e547703a26d59e677ed48221e0d95a6-dual_engine_browser_tests-0-1 - Swarm Status",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://swarm-ui.azurewebsites.net/est2/job/win_x64_debug-Win10%20Tests%20x64%20(dbg)-edge-rolling-incremental-win_x64_debug-122040973.122042819.1/shard/3e9201b08e547703a26d59e677ed48221e0d95a6-dual_engine_browser_tests-0-1",
+               "visit_count": 2
+            }, {
+               "date_added": "13391160714999391",
+               "date_last_used": "0",
+               "guid": "a41571da-586b-4f6f-8d2f-95e5580714d4",
+               "id": "170",
+               "name": "ai-coder-tools/ts-server/src/handlers/icm_handler.ts at main · ai-microsoft/ai-coder-tools",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://github.com/ai-microsoft/ai-coder-tools/blob/main/ts-server/src/handlers/icm_handler.ts",
+               "visit_count": 1
+            }, {
+               "date_added": "13391576070475630",
+               "date_last_used": "0",
+               "guid": "76e01bac-bbd4-42dd-86a0-b9ca6dc751f4",
+               "id": "169",
+               "name": "Pull request 12917981: Fixing cannot implicitly convert type 'long' to 'bool'\" - Repos",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://microsoft.visualstudio.com/Edge/_git/edgeinternal.datapipeline.workflows/pullrequest/12917981",
+               "visit_count": 1
+            } ],
+            "date_added": "13361351794741236",
+            "date_last_used": "0",
+            "date_modified": "13391576070475630",
+            "guid": "a5ebab2d-78ab-4337-8ba0-76cfd1f226fc",
+            "id": "137",
+            "name": "test",
+            "source": "unknown",
+            "type": "folder"
+         }, {
+            "children": [ {
+               "date_added": "13385551317172325",
+               "date_last_used": "0",
+               "guid": "09534af7-cde3-402d-9ffc-ed46db2046c4",
+               "id": "153",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "IEMode KPI",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://titanweb.microsoft.com/superset/dashboard/4711/",
+               "visit_count": 1
+            }, {
+               "date_added": "13386323738869397",
+               "date_last_used": "0",
+               "guid": "cc5261e4-5fd3-4f64-8061-b7c09100b04d",
+               "id": "154",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "Introduction - Model Context Protocol",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://modelcontextprotocol.io/introduction",
+               "visit_count": 1
+            } ],
+            "date_added": "13374121488268281",
+            "date_last_used": "0",
+            "date_modified": "13386323738869397",
+            "guid": "f22765de-3931-4b03-83f5-596be9294192",
+            "id": "152",
+            "name": "onboard",
+            "source": "unknown",
+            "type": "folder"
+         }, {
+            "date_added": "13378466697715299",
+            "date_last_used": "0",
+            "guid": "5e4b4379-75dd-4a91-9c76-8d802237042c",
+            "id": "155",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "Commit dd283165: Pump Sheriff: Try fix for mb_Gen issues. Reference Commit 68265fb4: Pump Vend... - Repos",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://microsoft.visualstudio.com/Edge/_git/chromium.src/commit/dd28316561b2c319131753ee9e72052261bc11a1?refName=refs/heads/main&path=/chrome/browser/media/webrtc/BUILD.gn&_a=contents",
+            "visit_count": 1
+         }, {
+            "date_added": "13380898352277575",
+            "date_last_used": "0",
+            "guid": "aff069ec-725e-4823-a8de-4ce8ce2e1679",
+            "id": "156",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "Pin To Edge daily summary(Feb 27~Jun 15).docx",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://microsoft.sharepoint.com/:w:/r/teams/Edge/_layouts/15/doc2.aspx?sourcedoc=%7B5DBDDA03-4250-45EB-A6A8-D04A25BFC578%7D&file=Pin%20To%20Edge%20daily%20summary(Feb%2027~Jun%2015).docx&action=default&mobileredirect=true&DefaultItemOpen=1&share=IQED2r1dUELrRaao0Eolv8V4ASo7rlUSsyZJp_ISc2XKvc4",
+            "visit_count": 1
+         }, {
+            "date_added": "13381925177281463",
+            "date_last_used": "0",
+            "guid": "71ec0498-964d-41b4-b6e7-ab26ecba8894",
+            "id": "157",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "How to use the GPT-4o Realtime API for speech and audio with Azure OpenAI Service - Azure OpenAI | Microsoft Learn",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/realtime-audio",
+            "visit_count": 1
+         } ],
+         "date_added": "13389780393427919",
+         "date_last_used": "0",
+         "date_modified": "13381925177281463",
+         "guid": "0bc5d13f-2cba-5d74-951f-3f233fe6c908",
+         "id": "1",
+         "name": "Favorites bar",
+         "source": "unknown",
+         "type": "folder"
+      },
+      "other": {
+         "children": [  ],
+         "date_added": "13389780393427969",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "82b081ec-3dd3-529c-8475-ab6c344590dd",
+         "id": "2",
+         "name": "Other favorites",
+         "source": "unknown",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [  ],
+         "date_added": "13389780393427992",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "4cf2e351-0e85-532b-bb37-df045d8f8d0f",
+         "id": "3",
+         "name": "Mobile favorites",
+         "source": "unknown",
+         "type": "folder"
+      },
+      "workspaces": {
+         "children": [ {
+            "children": [  ],
+            "date_added": "13390363579424659",
+            "date_last_used": "0",
+            "date_modified": "13390363579424671",
+            "guid": "026aad65-2abb-4386-9bb1-a44415033011",
+            "id": "160",
+            "name": "Kiosk Mode",
+            "source": "unknown",
+            "type": "workspace",
+            "workspace_id": "01ac9e7d-6813-41b9-bb8c-3057bb894c02"
+         }, {
+            "children": [  ],
+            "date_added": "13390363579426671",
+            "date_last_used": "0",
+            "date_modified": "13390363579426683",
+            "guid": "d9445b02-9e9d-4ff3-b6ea-70f48332eddf",
+            "id": "161",
+            "name": "Meta-OS testing",
+            "source": "unknown",
+            "type": "workspace",
+            "workspace_id": "8c8f0a39-4af0-44fa-aab6-22b814c39c2a"
+         }, {
+            "children": [  ],
+            "date_added": "13390363579427857",
+            "date_last_used": "0",
+            "date_modified": "13390363579427867",
+            "guid": "98f49d3e-e8d7-45d2-aafe-4be13cd18d3c",
+            "id": "162",
+            "name": "IcM-55952614",
+            "source": "unknown",
+            "type": "workspace",
+            "workspace_id": "37513059-058c-48b0-8512-3b661eb343c4"
+         }, {
+            "children": [  ],
+            "date_added": "13390363579428818",
+            "date_last_used": "0",
+            "date_modified": "13390363579428826",
+            "guid": "229dde95-f042-4f16-ab0f-a8bdde177567",
+            "id": "163",
+            "name": "Dash board",
+            "source": "unknown",
+            "type": "workspace",
+            "workspace_id": "f7c632af-4382-4a72-939b-aefc34dae64a"
+         }, {
+            "children": [  ],
+            "date_added": "13390363579429750",
+            "date_last_used": "0",
+            "date_modified": "13390363579429757",
+            "guid": "bcaac182-1f63-479a-bcbe-87d798de1297",
+            "id": "164",
+            "name": "onbroard",
+            "source": "unknown",
+            "type": "workspace",
+            "workspace_id": "4b1870bd-de8b-4a99-bf9c-bebe1a03a0d8"
+         }, {
+            "children": [  ],
+            "date_added": "13390363579430551",
+            "date_last_used": "0",
+            "date_modified": "13390363579430559",
+            "guid": "1cbe400e-179f-4422-acd7-83f248a89ca0",
+            "id": "165",
+            "name": "Hackathon Teams X Edge",
+            "source": "unknown",
+            "type": "workspace",
+            "workspace_id": "ac346189-cc68-40b1-9ec7-43b9d0212dca"
+         }, {
+            "children": [  ],
+            "date_added": "13390363579431645",
+            "date_last_used": "0",
+            "date_modified": "13390363579431652",
+            "guid": "8ba00153-a150-4e8a-883a-a3dee73f73ff",
+            "id": "166",
+            "name": "CWC",
+            "source": "unknown",
+            "type": "workspace",
+            "workspace_id": "a8700308-7f4d-4568-b6fe-714631656a60"
+         }, {
+            "children": [  ],
+            "date_added": "13390363579432529",
+            "date_last_used": "0",
+            "date_modified": "13390363579432535",
+            "guid": "0f99d7f0-51da-46d1-a202-f4a2dd28e2ee",
+            "id": "167",
+            "name": "Pump",
+            "source": "unknown",
+            "type": "workspace",
+            "workspace_id": "09a7be36-003b-4cc9-87a9-cf9caa656f96"
+         } ],
+         "date_added": "13390363507694639",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "00000000-0000-4000-a000-000000000006",
+         "id": "158",
+         "name": "Workspaces favorites",
+         "source": "unknown",
+         "type": "workspace",
+         "workspace_id": ""
+      }
+   },
+   "version": 1
+}

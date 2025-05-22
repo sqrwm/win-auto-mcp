@@ -1,0 +1,55 @@
+Please use native-mcp-server to execute the following instructions. Only generate test code — do not include any explanations, modifications, or additions:
+
+# Original BDD Test Case (strictly follow step-by-step):
+ Scenario: Add a website to favorites with a custom name
+    When I navigate to "https://www.github.com"
+    And open Favorites panel and 
+    Then click native "Add this page to favorites" button
+    And I change the name to "GitHub - Dev Platform"
+    Then keyboard input "{ENTER}"
+
+Requirements:
+1. Before executing any step, call `before_gen_code`.
+2. Execute **each step** exactly as written, in order. Each step must generate one block of test code.
+3. **Do not modify, merge, skip, or add any step.**
+4. After all steps are executed, sequentially call `preview_code_changes` and `confirm_code_change`.
+5. Use **only** native-mcp-server API calls.
+6. The output should include only the code and required invocation calls. **No explanation, comments, or extra text.**
+
+
+******
+
+Please use native-mcp-server to execute the following instructions. Only generate test code — do not include any explanations, modifications, or additions:
+
+# Original BDD Test Case (strict step-by-step execution only):
+Scenario: Add a website to favorites in a specific folder
+    When I navigate to "https://www.linkedin.com"
+    And I click the star icon in the address bar
+    And I select "TEST" from the folder dropdown list
+    And I click the "Done" button in the favorites dialog
+    Then "LinkedIn" should appear in the "Work" folder in my favorites list
+
+Requirements:
+1. Before executing the first step, call before_gen_code. After all steps are completed, sequentially call preview_code_changes and confirm_code_change.
+2. For each step, generate exactly one block of test code, in strict order — no skipping, merging, or rewriting.
+3. Use only native-mcp-server API calls — no internal tools or custom wrappers.
+4. **If a dialog is currently open, or if the current or upcoming step involves fill_edit_field or send_keystrokes or open_combobox or select_item, automatically continue to the next step without pause.**
+5. Output only the code and required API calls. No explanations, comments, or extra lines.
+
+
+
+Please use native-mcp-server to execute the following instructions. Only generate test code — do not include any explanations, modifications, or additions:
+
+# Original BDD Test Case (strict step-by-step execution only):
+Scenario: Add a website to favorites using the star icon
+    When I navigate to "https://www.microsoft.com"
+    And I click the star icon in the address bar
+    And I click the "Done" button in the favorites dialog
+    Then "Microsoft - .*" should appear in my favorites list
+
+Requirements:
+1. Before executing the first step, call before_gen_code. After all steps are completed, sequentially call preview_code_changes and confirm_code_change.
+2. For each step, generate exactly one block of test code, in strict order — no skipping, merging, or rewriting.
+3. Use only native-mcp-server API calls — no internal tools or custom wrappers.
+4. If a dialog is currently open, or if the upcoming step involves fill_edit_field or send_keystrokes, automatically continue to the next step, do not stop.
+5. Output only the code and required API calls. No explanations, comments, or extra lines.
