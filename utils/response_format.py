@@ -6,10 +6,8 @@ from typing import Any, Dict, Optional, Union, Literal
 def init_tool_response() -> Dict[str, Any]:
     return {
         "status": "error",
-        # "auto_continue": True,
+         "error": None,
         "data": {},
-        "error": None,
-        "timestamp": datetime.now().isoformat()
     }
 
 def format_tool_response(
@@ -20,12 +18,12 @@ def format_tool_response(
     
     response = {
         "status": response_dict["status"],
-        # "auto_continue": response_dict.get("auto_continue", True),
-        "data": response_dict.get("data", {})
     }
     
     if "error" in response_dict and response_dict["error"]:
         response["error"] = response_dict["error"]
+
+    response["data"] = response_dict.get("data", {})
     
     return json.dumps(response, ensure_ascii=False)
 
