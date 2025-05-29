@@ -1,3 +1,6 @@
 psutil
 mcp
 janus
+pillow
+pywinauto
+behave
