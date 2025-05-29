@@ -8,6 +8,7 @@ from browser_session import BrowserSessionManager
 from tools.browser_tool import register_browser_tools
 from tools.gen_code_tool import register_gen_code_tools
 from tools.mouse_tool import register_mouse_tools
+from tools.verify_tool import register_verify_tools
 from utils.logger import log_tool_call
 
 settings = {
@@ -31,6 +32,7 @@ def main():
     register_browser_tools(mcp, browser_manager)
     register_mouse_tools(mcp, browser_manager)
     register_gen_code_tools(mcp, browser_manager)
+    register_verify_tools(mcp, browser_manager)
 
     mcp.run(args.transport)
 
