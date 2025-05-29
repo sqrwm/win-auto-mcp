@@ -6,6 +6,8 @@ import sys
 import inspect
 import logging
 import functools
+import pprint
+import textwrap
 from pathlib import Path
 
 
@@ -16,6 +18,8 @@ PARENT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FEATURE_DIR = os.path.join(PARENT_DIR, 'behave_demo/features')
 STEPS_DIR_DEFAULT = os.path.join(PARENT_DIR, 'behave_demo/features/steps')
 TARGET_STEP_FILE_DEFAULT = os.path.join(STEPS_DIR_DEFAULT, "common_steps.py")
+
+MCP_SERVER_INTERNAL_CALL = "mcp-server-internal-transfer-call"
 
 HEADER_AUTO_GEN = """
 from behave import *
@@ -73,7 +77,13 @@ def generate_args_data_multi_param(step_info: dict):
     real_parameterized = False
 
     if not need_parameterize(step_info, len(parameterized_args)):
-        return f'{tool_params}', real_parameterized
+        args_str = pprint.pformat(tool_params, indent=0)
+        args_lines = args_str.splitlines()
+        args_str_final = args_lines[0]
+        if len(args_lines) > 1:
+            args_str_final += "\n"
+            args_str_final += textwrap.indent("\n".join(args_lines[1:]), ' ' * 12)
+        return args_str_final, real_parameterized
     
     map_info = TOOL_PARAMS_REPLACE_MAP.get(tool_name, {})
     tool_params_copy = copy.deepcopy(tool_params)
@@ -82,11 +92,11 @@ def generate_args_data_multi_param(step_info: dict):
             tool_params_copy[k] = parameterized_k
             real_parameterized = True
 
-    params_str = '{' + ', '.join(
-            f"'{k}': {map_info.get(k) if k in map_info and map_info.get(k) in parameterized_args and v in parameterized_args else repr(v)}"
+    params_str = '{\n' + ',\n'.join(
+            f"{' ' * 12}'{k}': {map_info.get(k) if k in map_info and map_info.get(k) in parameterized_args and v in parameterized_args else repr(v)}"
             for k, v in tool_params_copy.items()
-        ) + '}'
-
+        ) + f"\n{' ' * 8}}}"
+    
     print(f"generate_args_data_multi_param: {tool_name}, tool_params_copy: {tool_params_copy}")
     print(f"generate_args_data_multi_param: {tool_name}, params_str: {params_str}\n")
     return params_str, real_parameterized
@@ -112,7 +122,10 @@ def generate_step_definition(step_info) -> str:
 def step_impl(context{param_def}):"""
         
     code_text += f"""
-    result = call_tool_sync(context, context.session.call_tool(name="{step_info.get('tool_name')}", arguments={args_str}))
+    result = call_tool_sync(context, context.session.call_tool(
+        name="{step_info.get('tool_name')}", 
+        arguments={args_str}
+    ))
     result_json = get_tool_json(result)
     assert result_json.get("status") == "success", f"Expected status to be 'success', got '{{result_json.get('status')}}', error: '{{result_json.get('error')}}'" """
     return code_text
@@ -169,7 +182,7 @@ def gen_code_preview(browser_manager) -> dict:
     new_steps_code = []
     existing_code = ""
     
-    step_file = browser_manager.step_dir
+    step_file = browser_manager.steps_dir
     existing_code = read_step_files(Path(step_file))
     target_existing_code = read_step_files(Path(browser_manager.step_file_target))
 
@@ -189,7 +202,7 @@ def gen_code_preview(browser_manager) -> dict:
         step_text = item.get('step_text', '')
         step_type = item.get('step_type', '')
         print(f"\nexisting_patterns check: {(step_type, step_text.lower())}\n")
-        if (step_type, step_text.lower())  in existing_patterns:
+        if (step_type, step_text.lower()) in existing_patterns:
             continue
         if (step_type, step_text.lower()) in new_add_patterns and item.get("call_idx", 0) <= 1:
             continue
@@ -216,7 +229,7 @@ def gen_code_preview_test(gen_code_id, gen_code_cache) -> str:
     browser_manager = BrowserSessionManager('edge-beta')
     browser_manager.gen_code_id = gen_code_id
     browser_manager.gen_code_cache = gen_code_cache
-    browser_manager.step_dir = TARGET_STEP_FILE_DEFAULT
+    browser_manager.steps_dir = STEPS_DIR_DEFAULT
     browser_manager.step_file_target = TARGET_STEP_FILE_DEFAULT
     return gen_code_preview(browser_manager)
 
@@ -290,6 +303,72 @@ def log_params(func, *args, **kwargs):
     
     tool_params['need_snapshot'] = 0
     return tool_params
+
+
+def parse_steps_dir_from_step_path(step_file: str):
+    step_path = Path(step_file).resolve()
+
+    current = step_path
+    while current.name != "steps":
+        current = current.parent
+        if current == current.parent:
+            current = None
+            break
+
+    steps_dir = current
+    if not current:
+        if step_file.endswith('.py'):
+            steps_dir = step_path.parent
+        else:
+            steps_dir = step_path
+      
+    os.makedirs(steps_dir, exist_ok=True)
+    return str(steps_dir)
+
+
+def gen_step_file_from_feature_path(feature_file: str):
+    is_feature_file = True if feature_file.endswith('.feature') else False
+    feature_path = Path(feature_file).resolve()
+
+    current = feature_path
+    while current.name != "features":
+        current = current.parent
+        if current == current.parent:
+            current = None
+            break
+    
+   
+    features_dir = current
+    if not current:
+        if is_feature_file:
+            features_dir = feature_path.parent
+        else:
+            features_dir = feature_path
+    steps_dir = features_dir / "steps"
+
+    # 获取 feature 文件相对 features 的路径
+    rel_path = feature_path.relative_to(features_dir)
+    step_file_dir = steps_dir / rel_path.parent
+    step_file_name = "common_step.py"
+    if is_feature_file:
+        step_file_name = rel_path.stem + ".py"
+    elif rel_path.stem:
+        step_file_name = rel_path.stem + "\common_step.py"
+    step_file_path = step_file_dir / step_file_name
+    os.makedirs(step_file_dir, exist_ok=True)
+  
+    return str(steps_dir), str(step_file_path)
+
+    # # 创建目录
+    # os.makedirs(step_file_dir, exist_ok=True)
+
+    # # 创建 step 文件（如不存在）
+    # if not step_file_path.exists():
+    #     with open(step_file_path, "w", encoding="utf-8") as f:
+    #         f.write(f"# Auto-generated step file for {rel_path.name}\n")
+    #     print(f"Created: {step_file_path}")
+    # else:
+    #     print(f"Already exists: {step_file_path}")
  
  
 def record_calls(browser_manager):
@@ -304,6 +383,8 @@ def record_calls(browser_manager):
                     return result
                 call_info = {}
                 tool_params = log_params(func, *args, **kwargs)
+                if tool_params.get('caller') == MCP_SERVER_INTERNAL_CALL:
+                    return result
                 if browser_manager.gen_code_id and (tool_params.get('step_raw', '') or tool_params.get('step', '')):
                     tool_params['caller'] = 'behave-automation'
                     call_info['scenario'] = tool_params.pop('scenario', '')
@@ -330,28 +411,40 @@ def record_calls(browser_manager):
 
 if __name__ == "__main__":
     steps = [
+            {'gen_code_id': '889ecfa9-9d8c-4c13-8b9f-42688133fef1', 'tool_name': 'borwser_launch', 'step': 'Given 22 navigate to "https://www.bing.com"', 'scenario': 'verify browser tool', 
+              'tool_params': {'url': 'https://www.bing.com', 'caller': 'behave', 'need_snapshot': 0, 'need_snapsho2t': 0, 'need_snapshot3': 0}},
             {'gen_code_id': '889ecfa9-9d8c-4c13-8b9f-42688133fef1', 'tool_name': 'native_navigate', 'step': 'Given 22 navigate to "https://www.bing.com"', 'scenario': 'verify browser tool', 
               'tool_params': {'url': 'https://www.bing.com', 'caller': 'behave'}},
-              {'gen_code_id': '889ecfa9-9d8c-4c13-8b9f-42688133fef1', 'tool_name': 'native_navigate', 'step': 'Given 22 navigate to "https://www.bing.comm"', 'scenario': 'verify browser tool', 
-              'tool_params': {'url': 'https://www.bing.com', 'caller': 'behave'}},
-              {'gen_code_id': '889ecfa9-9d8c-4c13-8b9f-42688133fef1', 'tool_name': 'native_navigate', 'step': 'Given 22 navigate to "https://www.bing.co"', 'scenario': 'verify browser tool', 
-              'tool_params': {'url': 'https://www.bing.co', 'caller': 'behave'}},
-              {'gen_code_id': '889ecfa9-9d8c-4c13-8b9f-42688133fef1', 'tool_name': 'native_navigate', 'step': 'Given 22 Navigate to "https://www.bing.co"', 'scenario': 'verify browser tool', 
-              'tool_params': {'url': 'https://www.bing.co', 'caller': 'behave'}},
-             {'gen_code_id': '889ecfa9-9d8c-4c13-8b9f-42688133fef1', 'tool_name': 'native_button_click', 'step': 'And 33 "Microsoft - .*" should appear in my favorites list', 'scenario': 'verify browser tool', 
-              'tool_params': { 'name': 'Favorites', 'caller': 'behave'}}, 
-             {'gen_code_id': '889ecfa9-9d8c-4c13-8b9f-42688133fef1', 'tool_name': 'verify_element_exists', 'step': 'And 33 "Microsoft - .*" should appear in my favorites list', 'scenario': 'verify browser tool', 
-              'tool_params': {'element_name': 'Microsoft - .*', 'caller': 'behave', 'control_type': 'TreeItem'}},
-              {'gen_code_id': '889ecfa9-9d8c-4c13-8b9f-42688133fef1', 'tool_name': 'native_navigate', 'step': 'Given 22 navigate to "https://www.bing.co"', 'scenario': 'verify browser tool', 
-              'tool_params': {'url': 'https://www.bing.co', 'caller': 'behave'}},
-             {'gen_code_id': '889ecfa9-9d8c-4c13-8b9f-42688133fef1', 'tool_name': 'native_button_click', 'step': 'And 33 "Microsoft - .*" should appear in my favorites list', 'scenario': 'verify browser tool', 
-              'tool_params': { 'name': 'Favorites', 'caller': 'behave'}}, 
-             {'gen_code_id': '889ecfa9-9d8c-4c13-8b9f-42688133fef1', 'tool_name': 'verify_element_exists', 'step': 'And 33 "Microsoft - .*" should appear in my favorites list', 'scenario': 'verify browser tool', 
-              'tool_params': {'element_name': 'Microsoft - .*', 'caller': 'behave', 'control_type': 'TreeItem'}}
+            #   {'gen_code_id': '889ecfa9-9d8c-4c13-8b9f-42688133fef1', 'tool_name': 'native_navigate', 'step': 'Given 22 navigate to "https://www.bing.comm"', 'scenario': 'verify browser tool', 
+            #   'tool_params': {'url': 'https://www.bing.com', 'caller': 'behave'}},
+            #   {'gen_code_id': '889ecfa9-9d8c-4c13-8b9f-42688133fef1', 'tool_name': 'native_navigate', 'step': 'Given 22 navigate to "https://www.bing.co"', 'scenario': 'verify browser tool', 
+            #   'tool_params': {'url': 'https://www.bing.co', 'caller': 'behave'}},
+            #   {'gen_code_id': '889ecfa9-9d8c-4c13-8b9f-42688133fef1', 'tool_name': 'native_navigate', 'step': 'Given 22 Navigate to "https://www.bing.co"', 'scenario': 'verify browser tool', 
+            #   'tool_params': {'url': 'https://www.bing.co', 'caller': 'behave'}},
+            #  {'gen_code_id': '889ecfa9-9d8c-4c13-8b9f-42688133fef1', 'tool_name': 'native_button_click', 'step': 'And 33 "Microsoft - .*" should appear in my favorites list', 'scenario': 'verify browser tool', 
+            #   'tool_params': { 'name': 'Favorites', 'control_type': 'Button', 'caller': 'behave'}}, 
+            #  {'gen_code_id': '889ecfa9-9d8c-4c13-8b9f-42688133fef1', 'tool_name': 'verify_element_exists', 'step': 'And 33 "Microsoft - .*" should appear in my favorites list', 'scenario': 'verify browser tool', 
+            #   'tool_params': {'element_name': 'Microsoft - .*', 'caller': 'behave', 'control_type': 'TreeItem'}},
+            #   {'gen_code_id': '889ecfa9-9d8c-4c13-8b9f-42688133fef1', 'tool_name': 'native_navigate', 'step': 'Given 22 navigate to "https://www.bing.co"', 'scenario': 'verify browser tool', 
+            #   'tool_params': {'url': 'https://www.bing.co', 'caller': 'behave'}},
+            #  {'gen_code_id': '889ecfa9-9d8c-4c13-8b9f-42688133fef1', 'tool_name': 'native_button_click', 'step': 'And 33 "Microsoft - .*" should appear in my favorites list', 'scenario': 'verify browser tool', 
+            #   'tool_params': { 'name': 'Favorites', 'caller': 'behave'}}, 
+            #  {'gen_code_id': '889ecfa9-9d8c-4c13-8b9f-42688133fef1', 'tool_name': 'verify_element_exists', 'step': 'And 33 "Microsoft - .*" should appear in my favorites list', 'scenario': 'verify browser tool', 
+            #   'tool_params': {'element_name': 'Microsoft - .*', 'caller': 'behave', 'control_type': 'TreeItem'}}
                 ]
-    rr = gen_code_preview_test('889ecfa9-9d8c-4c13-8b9f-42688133fef1', steps)
+    # rr = gen_code_preview_test('889ecfa9-9d8c-4c13-8b9f-42688133fef1', steps)
     
-    with open(TARGET_STEP_FILE_DEFAULT, 'a', encoding='utf-8') as f:
-        for item in rr.get('new_steps_code'):
-            f.write(item + "\n")
+    # with open(TARGET_STEP_FILE_DEFAULT, 'a', encoding='utf-8') as f:
+    #     for item in rr.get('new_steps_code'):
+    #         f.write(item + "\n")
     # print(read_step_files(Path(r'c:\Users\toyu\code\auto-mcp-demo\behave_demo\features\steps')))
+
+    gen_step_file_from_feature_path(r'C:\Users\toyu\code\edgeinternal.quality-toolkit\auto-mcp-demo\behave_demo\features\favorites\sync_favorites.feature')
+    gen_step_file_from_feature_path(r'C:\Users\toyu\code\edgeinternal.quality-toolkit\auto-mcp-demo\behave_demo\features\favorites')
+    gen_step_file_from_feature_path(r'C:\Users\toyu\code\edgeinternal.quality-toolkit\auto-mcp-demo\behave_demo\features')
+    gen_step_file_from_feature_path(r'C:\Users\toyu\code\edgeinternal.quality-toolkit\auto-mcp-demo\behave_demo\sync_favorites.feature')
+    
+    # parse_steps_dir_from_step_path(r'C:\Users\toyu\code\edgeinternal.quality-toolkit\auto-mcp-demo\behave_demo\steps')
+    # parse_steps_dir_from_step_path(r'C:\Users\toyu\code\edgeinternal.quality-toolkit\auto-mcp-demo\behave_demo\steps\demo-test')
+    # parse_steps_dir_from_step_path(r'C:\Users\toyu\code\edgeinternal.quality-toolkit\auto-mcp-demo\behave_demo\steps\demo-test\test_steps.py')
+    # parse_steps_dir_from_step_path(r'C:\Users\toyu\code\edgeinternal.quality-toolkit\auto-mcp-demo\behave_demo\test_steps')
