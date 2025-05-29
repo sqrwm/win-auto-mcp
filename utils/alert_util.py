@@ -18,13 +18,12 @@ def close_translate_pane(main_window):
             control_type="Pane",
             depth=20
         )
-        if not translate_pane.exists(timeout=2):
+        if not translate_pane.exists(timeout=1):
             return
 
         close_btn = translate_pane.child_window(
             title="Close",
             control_type="Button",
-            depth=20
         )
         close_btn.click_input()
         logger.info(f"Close the translation pane")
@@ -42,15 +41,13 @@ def close_restore_pane(main_window):
         pane = main_window.child_window(
             title="Restore pages",
             control_type="Pane",
-            depth=20
         )
-        if not pane.exists(timeout=2):
+        if not pane.exists(timeout=1):
             return
 
         close_btn = pane.child_window(
             title="Close",
             control_type="Button",
-            depth=20
         )
         close_btn.click_input()
         logger.info(f"Close the restore pane")
