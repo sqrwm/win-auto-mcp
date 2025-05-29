@@ -9,7 +9,7 @@ from utils.element_util import extract_element_info
 from utils.keyboard_util import get_shortcut_key
 from utils.logger import log_tool_call
 from utils.response_format import format_tool_response, init_tool_response
-from utils.gen_code import record_calls
+from utils.gen_code import record_calls, MCP_SERVER_INTERNAL_CALL
 from utils.alert_util import close_translate_pane, close_all_alert
 
         
@@ -37,7 +37,76 @@ def register_browser_tools(mcp, browser_manager):
         """
         resp = init_tool_response()        
         try:
-            browser_manager.browser_launch()
+            is_new_launch = browser_manager.browser_launch()
+            if is_new_launch:
+                close_all_alert(browser_manager.get_main_window())
+            resp["status"] = "success"
+            if need_snapshot == 1:
+                snapshot = extract_element_info(browser_manager.get_main_window()) 
+                resp["data"] = {"step_raw": step_raw, "snapshot": snapshot}
+        except Exception as e:
+            resp["error"] = repr(e)
+            logger.error(f"Error launching browser: {e}")
+        return format_tool_response(resp)
+    
+    @mcp.tool()
+    @log_tool_call
+    @record_calls(browser_manager)
+    async def browser_screenshot(caller: str, path: str = "screenshots/screenshot.png", scenario: str = "", step_raw: str = "", step: str = "") -> str:
+        """
+        Takes a screenshot of the current browser main window and saves it as a PNG file.
+
+        Args:
+            caller: Identifier of the calling module/function
+            path: File path to save the screenshot (default: screenshots/screenshot.png)
+            scenario: Test scenario name (for logging)
+            step_raw: Raw original step text
+            step: Current test step description
+
+        Returns:
+            JSON response with status and error information
+        """
+        resp = init_tool_response()
+        try:
+            os.makedirs(os.path.dirname(path), exist_ok=True)
+            main_window = browser_manager.get_main_window()
+            if main_window is None:
+                raise RuntimeError("Main window not found, cannot take screenshot.")
+            img = main_window.capture_as_image()
+            if img is None:
+                raise RuntimeError("capture_as_image() returned None. Is Pillow installed?")
+            img.save(path)
+            resp["data"] = {"path": path, "step_raw": step_raw}
+
+            resp["status"] = "success"
+            print(f"Screenshot saved to {path}")
+        except Exception as e:
+            resp["error"] = repr(e)
+            logger.error(f"Error taking browser screenshot: {e}")
+            print(f"Error taking screenshot: {e}")
+
+
+    @mcp.tool()
+    @log_tool_call
+    @record_calls(browser_manager)
+    async def browser_launch_with_user_data(caller: str, custom_user_data_dir: str, scenario: str = "", step: str = "", step_raw: str = "", 
+                             need_snapshot: int = 1) -> str:
+        """
+        Launches the web browser with user specified data.
+        
+        Args:
+            caller: Identifier of the calling module/function
+            user_data_path: User data directory for the browser
+            scenario: Test scenario name (for logging)
+            step: Current test step description (for logging)
+            step_raw: Raw original step text
+            
+        Returns:
+            JSON response with browser snapshot data and status information
+        """
+        resp = init_tool_response()        
+        try:
+            browser_manager.browser_launch(custom_user_data_dir=custom_user_data_dir)
             close_all_alert(browser_manager.get_main_window())
             resp["status"] = "success"
             if need_snapshot == 1:
@@ -47,7 +116,7 @@ def register_browser_tools(mcp, browser_manager):
             resp["error"] = repr(e)
             logger.error(f"Error launching browser: {e}")
       
-        return format_tool_response(resp)    
+        return format_tool_response(resp)
     
     
     @mcp.tool()
@@ -113,12 +182,13 @@ def register_browser_tools(mcp, browser_manager):
             # time.sleep(2)
             # main_window.type_keys(f'{url}{{ENTER}}')
             time.sleep(2)
+            close_translate_pane(main_window)
+            time.sleep(1)
             resp["status"] = "success"
             if need_snapshot == 1:
                 snapshot = extract_element_info(browser_manager.get_main_window()) 
                 resp["data"] = {"step_raw": step_raw, "snapshot": snapshot}
         except Exception as e:
-            
             resp["error"] = repr(e)
             logger.error(f"Error navigating to {url}: {e}")
                     
@@ -128,14 +198,15 @@ def register_browser_tools(mcp, browser_manager):
     @mcp.tool()
     @log_tool_call
     @record_calls(browser_manager)
-    async def native_button_click(caller: str, name: str = "", automation_id: str = "", scenario: str = "", step_raw: str = "", 
-                                  step: str = "", need_snapshot: int = 1) -> str:
+    async def native_button_click(caller: str, name: str, control_type: str, automation_id: str = "", scenario: str = "", step_raw: str = "", 
+                                  step: str = "", timeout: int = 5, need_snapshot: int = 1) -> str:
         """
         Clicks on a native button element in the browser UI.
         
         Args:
             caller: Identifier of the calling module/function
             name: The exact title/name of the button to click
+            control_type: The type of control to open
             automation_id: The exact automation_id of the button to click
             scenario: Test scenario name
             step_raw: Raw original step text
@@ -144,27 +215,35 @@ def register_browser_tools(mcp, browser_manager):
         Returns:
             JSON response with browser snapshot data and status information
         """
+        if control_type == "TreeItem":
+            return await open_folder(caller=MCP_SERVER_INTERNAL_CALL, name=name, control_type=control_type, automation_id=automation_id, 
+                                     scenario=scenario, step_raw=step_raw, step=step, timeout=timeout, 
+                                     need_snapshot=need_snapshot)
+        
         resp = init_tool_response()
-        logger.info(f"native_button_click start")
         try:
             dlg = browser_manager.get_main_window()
-            btn_spec = dlg.child_window(
-                title=name,
-                control_type="Button",
-                # depth=20
-            )
-            exist = btn_spec.exists(timeout=5)
-            logger.info(f"native_button_click click_input: exists={exist}") 
-            btn = btn_spec.wrapper_object()
+            search_kwargs = {'title': name, 'control_type': control_type}
+            if automation_id:
+                search_kwargs["auto_id"] = automation_id
 
-            btn.click_input()
-            logger.info(f"native_button_click click_input done") 
-            time.sleep(1)
-            
-            resp["status"] = "success"
+            element = dlg.child_window(**search_kwargs)
+            exists = element.exists(timeout=timeout)
+            if exists:
+                btn = element.wrapper_object()
+                btn.click_input()
+                time.sleep(1)
+                resp["status"] = "success"
+            else:
+                resp["status"] = "failed"
+                resp["error"] = f"{control_type} control '{name}' not found within 5 seconds."
+                resp["data"]['search_kwargs'] = {'title': name, 'control_type': control_type}
+                logger.error(f"{resp['error']}: {resp['data']['search_kwargs']}")
+                
             if need_snapshot == 1:
+                time.sleep(1)
                 snapshot = extract_element_info(browser_manager.get_main_window()) 
-                resp["data"] = {"step_raw": step_raw, "snapshot": snapshot}
+                resp["data"].update({"step_raw": step_raw, "snapshot": snapshot})
         except Exception as e:
             resp["error"] = repr(e)
             import traceback
@@ -175,18 +254,75 @@ def register_browser_tools(mcp, browser_manager):
         return format_tool_response(resp)    
     
     
+    
     @mcp.tool()
     @log_tool_call
     @record_calls(browser_manager)
-    async def native_button_right_click(caller: str, name: str = "", automation_id: str = "", scenario: str = "", step_raw: str = "", 
-                                        step: str = "", need_snapshot: int = 1) -> str:
+    async def native_right_click(caller: str, name: str, control_type: str, automation_id: str = "", scenario: str = "", step_raw: str = "", 
+                                  step: str = "", timeout: int = 5, need_snapshot: int = 1) -> str:
         """
-        Performs a right-click operation on a native button element in the browser UI.
+        Right clicks on a native control element in the browser UI.
         
         Args:
             caller: Identifier of the calling module/function
-            name: The exact title/name of the button to right-click
+            name: The exact title/name of the button to click
+            control_type: The type of control to open
             automation_id: The exact automation_id of the button to click
+            scenario: Test scenario name
+            step_raw: Raw original step text
+            step: Current test step description
+            
+        Returns:
+            JSON response with browser snapshot data and status information
+        """
+        
+        resp = init_tool_response()
+        try:
+            dlg = browser_manager.get_main_window()
+            search_kwargs = {'title': name, 'control_type': control_type}
+            if automation_id:
+                search_kwargs["auto_id"] = automation_id
+
+            element = dlg.child_window(**search_kwargs)
+            exists = element.exists(timeout=timeout)
+            if exists:
+                btn = element.wrapper_object()
+                btn.right_click_input()
+                time.sleep(1)
+                resp["status"] = "success"
+            else:
+                resp["status"] = "failed"
+                resp["error"] = f"{control_type} control '{name}' not found within 5 seconds."
+                resp["data"]['search_kwargs'] = {'title': name, 'control_type': control_type}
+                logger.error(f"{resp['error']}: {resp['data']['search_kwargs']}")
+                
+            if need_snapshot == 1:
+                time.sleep(1)
+                snapshot = extract_element_info(browser_manager.get_main_window()) 
+                resp["data"].update({"step_raw": step_raw, "snapshot": snapshot})
+        except Exception as e:
+            resp["error"] = repr(e)
+            import traceback
+            traceback.print_exc()
+            logger.error(f"Error right clicking control '{name}': {repr(e)}")
+
+        logger.info(f"native_button_click done")    
+        return format_tool_response(resp)    
+
+    
+    @mcp.tool()
+    @log_tool_call
+    @record_calls(browser_manager)
+    async def native_double_right_click(caller: str, name: str, control_type: str, automation_id: str = "", scenario: str = "", step_raw: str = "", 
+                                        step: str = "", timeout: int = 5, need_snapshot: int = 1) -> str:
+        """
+        Performs a double-click operation on a native control element in the browser UI.
+        
+        Args:
+            caller: Identifier of the calling module/function
+            name: The exact title/name of the control to right-click
+            control_type: The type of control to open
+            automation_id: The exact automation_id of the control to click
             scenario: Test scenario name
             step_raw: Raw original step text
             step: Current test step description
@@ -197,20 +333,32 @@ def register_browser_tools(mcp, browser_manager):
         resp = init_tool_response()
         try:
             dlg = browser_manager.get_main_window()
-            btn = dlg.child_window(
-                title=name,
-                control_type="Button",
-                depth=20
-            )
-            btn.right_click_input()
-            time.sleep(2)
-            resp["status"] = "success"
+            search_kwargs = {'title': name, 'control_type': control_type}
+            if automation_id:
+                search_kwargs["auto_id"] = automation_id
+
+            element = dlg.child_window(**search_kwargs)
+            exists = element.exists(timeout=timeout)
+            if exists:
+                btn = element.wrapper_object()
+                btn.double_click_input()
+                time.sleep(1)
+                resp["status"] = "success"
+            else:
+                resp["status"] = "failed"
+                resp["error"] = f"{control_type} control '{name}' not found within 5 seconds."
+                resp["data"]['search_kwargs'] = {'title': name, 'control_type': control_type}
+                logger.error(f"{resp['error']}: {resp['data']['search_kwargs']}")
+                
             if need_snapshot == 1:
+                time.sleep(1)
                 snapshot = extract_element_info(browser_manager.get_main_window()) 
-                resp["data"] = {"step_raw": step_raw, "snapshot": snapshot}
+                resp["data"].update({"step_raw": step_raw, "snapshot": snapshot})
         except Exception as e:
             resp["error"] = repr(e)
-            logger.error(f"Error right-clicking button '{name}': {e}")
+            import traceback
+            traceback.print_exc()
+            logger.error(f"Error double clicking control '{name}': {repr(e)}")
                     
         return format_tool_response(resp)    
     
@@ -251,15 +399,17 @@ def register_browser_tools(mcp, browser_manager):
     @mcp.tool()
     @log_tool_call
     @record_calls(browser_manager)
-    async def enter_text(caller: str, title: str, content:str, scenario: str = '', step_raw: str = '', 
+    async def enter_text(caller: str, title: str, content:str, control_type: str, automation_id: str, scenario: str = '', step_raw: str = '', 
                          step: str = '', need_snapshot: int = 1) -> str:
         """
         Enters text into an editable field in the browser UI.
         
         Args:
             caller: Identifier of the calling module/function
-            title: Title or label of the edit field to locate
+            title: The exact title/name of the edit field 
             content: The text to enter into the edit field
+            control_type: The type of control to open
+            automation_id: The exact automation_id of the control to click
             scenario: Test scenario name
             step_raw: Raw original step text
             step: Current test step description
@@ -271,14 +421,25 @@ def register_browser_tools(mcp, browser_manager):
         resp = init_tool_response()
         try:
             dlg = browser_manager.get_main_window()
-            edit_text = dlg.child_window(title_re=f'.*{title}', control_type="Edit")
-            edit_text.wrapper_object().click_input()
-            edit_text.wrapper_object().type_keys('^a{BACKSPACE}' + content)
-            # edit_text.set_edit_text(content)
+            search_kwargs = {'title': title, 'control_type': control_type}
+            if automation_id:
+                search_kwargs["auto_id"] = automation_id
+
+            element = dlg.child_window(**search_kwargs)
+            if element.exists() is False:
+                if automation_id:
+                    search_kwargs = {'auto_id': automation_id, 'control_type': control_type}
+                    element = dlg.child_window(**search_kwargs)
+            # edit_text = dlg.child_window(title=f'{title}', control_type=control_type)
+            element.wrapper_object().click_input()
+            element.wrapper_object().type_keys('^a{BACKSPACE}', with_spaces=True)
+            element.wrapper_object().type_keys(content, with_spaces=True)
+            # element.set_edit_text(content)
             time.sleep(1)
             resp["status"] = "success"
             
             if need_snapshot == 1:
+                time.sleep(1)
                 snapshot = extract_element_info(browser_manager.get_main_window()) 
                 resp["data"] = {"step_raw": step_raw, "snapshot": snapshot}
         except Exception as e:
@@ -291,15 +452,15 @@ def register_browser_tools(mcp, browser_manager):
     @mcp.tool()
     @log_tool_call
     @record_calls(browser_manager)
-    async def open_folder(caller: str, name: str, automation_id: str = "", control_type: str = 'TreeItem', scenario: str = "", step_raw: str = '', 
+    async def open_folder(caller: str, name: str, control_type: str, automation_id: str = "", scenario: str = "", step_raw: str = '', 
                             step: str = '', timeout: int = 5, need_snapshot: int = 1) -> str:
         """
         Open/expand a folder/TreeItem
         
         Args:
             name: Name or title of the folder
+            control_type: The type of control to open
             automation_id: The exact automation_id of the folder
-            control_type: The type of control to open (default: TreeItem)
             scenario: Test scenario name
             step_raw: Raw original step text
             step: Current test step description
@@ -315,14 +476,19 @@ def register_browser_tools(mcp, browser_manager):
             exists = element.exists(timeout=timeout)
             if exists:
                 element = element.wrapper_object()
-                if not element.is_expanded():
+                # for leaf node, click it
+                if control_type == 'TreeItem' and element.get_expand_state() != 3 and not element.is_expanded():
                     element.expand()
-                    time.sleep(1)
+                else:
+                    element.click_input()
+                    
+                time.sleep(2)
                 resp["status"] = "success"
             else:
                 resp["status"] = "failed"
                 resp["error"] = f"{control_type} control '{name}' not found within {timeout} seconds."
                 resp["data"]['search_kwargs'] = search_kwargs
+
             if need_snapshot == 1:
                 snapshot = extract_element_info(browser_manager.get_main_window()) 
                 resp["data"].update({"step_raw": step_raw, "snapshot": snapshot})
@@ -420,206 +586,3 @@ def register_browser_tools(mcp, browser_manager):
                 
         return format_tool_response(resp)
     
-        
-    @mcp.tool()
-    @log_tool_call
-    @record_calls(browser_manager)
-    async def verify_element_exists(caller: str, 
-                                    element_name: str, 
-                                    control_type: str, 
-                                    timeout: int = 5,
-                                    scenario: str = "", 
-                                    step_raw: str = "",
-                                    step: str = "", 
-                                    need_snapshot: int = 1
-                                    ) -> str:
-        """
-        Verify/check if an element exists/appears
-        
-        Args:
-            element_name: Name or text of the element to search for
-            control_type: Optional control type for more specific search (TreeItem, Button, etc.)
-            timeout: Maximum time in seconds to wait for the element
-            scenario: Test scenario name (for logging)
-            step_raw: Raw original step text
-            step: Current test step description
-        """
-        exact_match = False  # Changed to False to support regex matching
-        resp = init_tool_response()
-        try:
-            dlg = browser_manager.get_main_window()
-            
-            # Determine the search scope
-            search_parent = dlg
-            
-            # Prepare search criteria based on parameters
-            search_kwargs = {}
-            if exact_match:
-                search_kwargs["title"] = element_name
-            else:
-                search_kwargs["title_re"] = f".*{element_name}.*"
-            
-            if control_type:
-                search_kwargs["control_type"] = control_type
-            
-            # First try a quick search
-            try:
-                element = search_parent.child_window(**search_kwargs, depth=20)
-                
-                # Check if element exists with timeout
-                exists = element.exists(timeout=timeout)
-                
-                if exists:
-                    # Get additional details about the found element
-                    resp["status"] = "success"
-                else:
-                    search_parent.print_control_identifiers()
-                    resp["status"] = "failed"
-                    resp["error"] = f"Element '{element_name}' not found within {timeout} seconds."
-                    logger.error(f"{resp['error']}: {search_kwargs}")
-            except Exception as search_error:
-                resp["error"] = repr(search_error)
-                logger.error(f"Error searching for element '{element_name}': {search_error}")
-
-            if need_snapshot == 1:
-                snapshot = extract_element_info(browser_manager.get_main_window()) 
-                resp["data"] = {"step_raw": step_raw, "snapshot": snapshot}
-        except Exception as e:
-            resp["error"] = repr(e)
-            logger.error(f"Error in verify_element_exists for '{element_name}': {e}")
-               
-        return format_tool_response(resp)
-    
-
-    @mcp.tool()
-    @log_tool_call
-    @record_calls(browser_manager)
-    async def verify_checkbox_state(caller: str,
-                                checkbox_name: str,
-                                expected_state: str,
-                                control_type: str = "CheckBox",
-                                timeout: int = 5,
-                                scenario: str = "", 
-                                step_raw: str = "",
-                                step: str = "",
-                                need_snapshot: int = 1
-                                ) -> str:
-        """
-        Verifies if a checkbox is checked or unchecked.
-        
-        Args:
-            caller: Identifier of the calling module/function
-            checkbox_name: Name or title of the checkbox to verify
-            expected_state: The expected state: "checked" or "unchecked"
-            control_type: Control type, defaults to "CheckBox"
-            timeout: Maximum time in seconds to wait for the checkbox
-            scenario: Test scenario name
-            step_raw: Raw original step text
-            step: Current test step description
-            
-        Returns:
-            JSON response with verification result and status information
-        """
-        resp = init_tool_response()
-        try:
-            dlg = browser_manager.get_main_window()
-            # Prepare search criteria based on parameters
-            search_kwargs = {}
-            search_kwargs["title_re"] = f"{checkbox_name}"
-            search_kwargs["control_type"] = control_type
-
-            checkbox_element = dlg.child_window(**search_kwargs, depth=20)
-            exists = checkbox_element.exists(timeout=timeout)
-            
-            if exists:
-                # Get the toggle state
-                is_checked = checkbox_element.get_toggle_state() == 1
-                actual_state = "checked" if is_checked else "unchecked"
-                
-                if expected_state.lower() == actual_state:                       
-                    resp["status"] = "success"
-                    resp["data"]["actual_state"] = actual_state
-                else:
-                    resp["status"] = "failed"
-                    resp["error"] = f"Checkbox state mismatch. Expected: '{expected_state}', Actual: '{actual_state}'"
-                    logger.error(resp["error"])
-            else:
-                resp["status"] = "failed"
-                resp["error"] = f"Checkbox '{checkbox_name}' not found within {timeout} seconds."
-                logger.error(f"{resp['error']}: {search_kwargs}")
-
-            if need_snapshot == 1:
-                snapshot = extract_element_info(browser_manager.get_main_window()) 
-                resp["data"] = {"step_raw": step_raw, "snapshot": snapshot}
-        except Exception as e:
-            resp["error"] = repr(e)
-            logger.error(f"Error in verify_checkbox_state for '{checkbox_name}': {e}")
-               
-        return format_tool_response(resp)
-    
-    
-    @mcp.tool()
-    @log_tool_call
-    @record_calls(browser_manager)
-    async def verify_element_value(caller: str,
-                               element_name: str,
-                               element_value: str,
-                               control_type: str, 
-                               expected_value: str,
-                               timeout: int = 5,
-                               scenario: str = "", 
-                               step_raw: str = "",
-                               step: str = "",
-                               need_snapshot: int = 1
-                               ) -> str:
-        """
-        Verifies that an control contains the expected value/content.
-        
-        Args:
-            caller: Identifier of the calling module/function
-            element_name: Name or title of the element to search for
-            element_value: value of the control, extract from the element value
-            control_type: Optional control type for more specific search (Edit, Button, etc.)
-            expected_value: The expected value to verify, only extract from the step content, do not extract from the element value
-            timeout: Maximum time in seconds to wait for the element
-            scenario: Test scenario name
-            step_raw: Raw original step text
-            step: Current test step description
-            
-        Returns:
-            JSON response with verification result and status information
-        """
-        resp = init_tool_response()
-        try:
-            dlg = browser_manager.get_main_window()
-            
-            # Prepare search criteria based on parameters
-            search_kwargs = {}
-            search_kwargs["title_re"] = f"{element_name}"
-            search_kwargs["control_type"] = control_type
-
-            edit_element = dlg.child_window(**search_kwargs, depth=20)
-            exists = edit_element.exists(timeout=timeout)
-            
-            if exists:
-                actual_value = edit_element.get_value()
-                if expected_value in actual_value:                       
-                    resp["status"] = "success"
-                else:
-                    resp["status"] = "failed"
-                    resp["error"] = f"Element value mismatch. Expected: '{expected_value}', Actual: '{actual_value}'"
-                    logger.error(resp["error"])
-            else:
-                resp["status"] = "failed"
-                resp["error"] = f"Edit control '{element_name}' not found within {timeout} seconds."
-                logger.error(f"{resp['error']}: {search_kwargs}")
-            
-            if need_snapshot == 1:
-                snapshot = extract_element_info(browser_manager.get_main_window()) 
-                resp["data"] = {"step_raw": step_raw, "snapshot": snapshot}
-
-        except Exception as e:
-            resp["error"] = repr(e)
-            logger.error(f"Error in verify_element_value for '{expected_value}': {e}")
-               
-        return format_tool_response(resp)
