@@ -7,7 +7,7 @@ import uuid
 from pathlib import Path
 from utils.logger import log_tool_call
 from utils.gen_code import HEADER_AUTO_GEN, STEPS_DIR_DEFAULT, TARGET_STEP_FILE_DEFAULT
-from utils.gen_code import gen_code_preview, ensure_step_path_exists
+from utils.gen_code import gen_code_preview, ensure_step_path_exists, gen_step_file_from_feature_path, parse_steps_dir_from_step_path
 from utils.response_format import format_tool_response, init_tool_response
 
 
@@ -20,7 +20,7 @@ def register_gen_code_tools(mcp, browser_manager):
     @mcp.tool()
     @log_tool_call
     async def before_gen_code(feature_file: str = '', step_file: str = '') -> str:
-        """Start to generate test case code"""
+        """"Clear cache and only executed before first step of test case"""
         try:
             resp = init_tool_response()
             browser_manager.clear_gen_code_cache()
@@ -28,30 +28,25 @@ def register_gen_code_tools(mcp, browser_manager):
             logger.info(f"[GEN CODE START]:{browser_manager.gen_code_id}")
         
             if step_file and step_file.endswith('.py'):
-                browser_manager.step_dir = os.path.basename(step_file)
+                browser_manager.steps_dir = parse_steps_dir_from_step_path(step_file)
                 browser_manager.step_file_target = step_file
-            elif feature_file and feature_file.endswith('.feature'):
-                feature_file_name = os.path.basename(feature_file)
-                feature_dir = os.path.dirname(os.path.abspath(feature_file))
-                feature_dir_name = os.path.basename(feature_dir)
-                steps_dir = os.path.join(os.path.dirname(feature_dir), 'steps')
-                step_file = os.path.join(steps_dir, feature_dir_name, f'{feature_file_name[0:-8]}.py')
-                browser_manager.step_dir = steps_dir
-                browser_manager.step_file_target = step_file
+            elif feature_file:
+                browser_manager.steps_dir, browser_manager.step_file_target = gen_step_file_from_feature_path(feature_file)
             else:
-                browser_manager.step_dir = STEPS_DIR_DEFAULT
+                browser_manager.steps_dir = STEPS_DIR_DEFAULT
                 browser_manager.step_file_target = TARGET_STEP_FILE_DEFAULT
 
             resp["status"] = "success"
             resp["data"] = {
                 "gen_code_id": browser_manager.gen_code_id,
-                "step_dir": browser_manager.step_dir,
+                "steps_dir": browser_manager.steps_dir,
                 "step_file_target": browser_manager.step_file_target,
                 # "gen_code_cache": browser_manager.gen_code_cache,
             }
         except Exception as e:
             resp["error"] = f"Error during code generation: {repr(e)}"
             logger.error(f"Error during code generation: {repr(e)}")
+            raise e
 
         return format_tool_response(resp)
     
@@ -67,20 +62,20 @@ def register_gen_code_tools(mcp, browser_manager):
         return result.get('diff_preview')
     
 
-    @mcp.tool()
-    @log_tool_call
-    async def after_gen_code() -> str:
-        """execute after generate test case code"""
-        if not browser_manager.gen_code_id or not browser_manager.gen_code_cache:
-            return "No pending code changes to generate"
-        # Instead of applying changes directly, trigger the preview
-        result_preview = await preview_code_changes()
-        result_confirm = await confirm_code_changes()
-        # diff_preview, new_added_code, new_steps_count  = preview_code_changes(browser_manager.gen_code_cache)
-        # browser_manager.proposed_changes = new_added_code
-        # browser_manager.new_steps_count = new_steps_count
-        # logger.info(f"[GEN CODE END]:{browser_manager.gen_code_id}")
-        return f"Code generation completed with ID: {browser_manager.gen_code_id}\n\n{result_confirm}\n\nUse confirm_code_changes tool to apply or reject changes."
+    # @mcp.tool()
+    # @log_tool_call
+    # async def after_gen_code() -> str:
+    #     """execute after generate test case code"""
+    #     if not browser_manager.gen_code_id or not browser_manager.gen_code_cache:
+    #         return "No pending code changes to generate"
+    #     # Instead of applying changes directly, trigger the preview
+    #     result_preview = await preview_code_changes()
+    #     result_confirm = await confirm_code_changes()
+    #     # diff_preview, new_added_code, new_steps_count  = preview_code_changes(browser_manager.gen_code_cache)
+    #     # browser_manager.proposed_changes = new_added_code
+    #     # browser_manager.new_steps_count = new_steps_count
+    #     # logger.info(f"[GEN CODE END]:{browser_manager.gen_code_id}")
+    #     return f"Code generation completed with ID: {browser_manager.gen_code_id}\n\n{result_confirm}\n\nUse confirm_code_changes tool to apply or reject changes."
 
     @mcp.tool()
     @log_tool_call
