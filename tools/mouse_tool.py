@@ -19,15 +19,17 @@ def register_mouse_tools(mcp, browser_manager):
     @mcp.tool()
     @log_tool_call
     @record_calls(browser_manager)
-    async def mouse_drag_drop(caller: str, source: str, target:str, scenario: str = '', step_raw: str = '', 
-                              tep: str = '', need_snapshot: int = 1) -> str:
+    async def mouse_drag_drop(caller: str, source_title: str, source_control_type: str, target_title:str, target_control_type: str, 
+                              scenario: str = '', step_raw: str = '', step: str = '', need_snapshot: int = 1) -> str:
         """
         Performs a drag and drop operation from source element to target element
         
         Args:
             caller: Identifier of the calling module/function
-            source: The name/title of the source element to drag from (typically a TreeItem in Edge)
-            target: The name/title of the target element to drop onto (typically a TreeItem in Edge)
+            source_title: The name/title of the source element to drag from (typically a TreeItem in Edge)
+            source_control_type: The type of control of source element
+            target_title: The name/title of the target element to drop onto (typically a TreeItem in Edge)
+            target_control_type: The type of control of target element
             scenario: Test scenario name
             step_raw: Raw original step text
             step: Current test step description
@@ -39,8 +41,8 @@ def register_mouse_tools(mcp, browser_manager):
         resp = init_tool_response()
         try:
             dlg = browser_manager.get_main_window()
-            source = dlg.child_window(title=source, control_type="TreeItem") 
-            target = dlg.child_window(title=target, control_type="TreeItem")
+            source = dlg.child_window(title=source_title, control_type=source_control_type) 
+            target = dlg.child_window(title=target_title, control_type=target_control_type)
             start_point = source.rectangle().mid_point()
             end_point = target.rectangle().mid_point()
 
