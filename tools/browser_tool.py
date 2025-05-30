@@ -366,24 +366,26 @@ def register_browser_tools(mcp, browser_manager):
     @mcp.tool()
     @log_tool_call
     @record_calls(browser_manager)
-    async def send_keystrokes(caller: str, name: str, scenario: str = '', step_raw: str = '', step: str = '', need_snapshot: int = 1) -> str:
+    async def send_keystrokes(caller: str, keys_sequence_raw: str, key_sequence_formatted, str, step_raw: str, step: str, scenario: str = '', need_snapshot: int = 1) -> str:
         """
-        Sends keyboard keystrokes to the active window, supporting special keys and key combinations.
-        
-        Args:
-            caller: Identifier of the calling module/function
-            name: The keystroke sequence to send
-            scenario: Test scenario name
-            step_raw: Raw original step text
-            step: Current test step description
+        Sends keystrokes to the active browser window using pywinauto, with support for key combinations.
 
+        Args:
+            caller (str): Identifier of the calling module or context.
+            key_sequence_raw (str): The original human-readable keystroke sequence (e.g., 'Ctrl+Shift+.').
+            key_sequence_formatted (str): The sequence converted to pywinauto's type_keys format 
+                                        (e.g., '^+.' for Ctrl+Shift+.).
+            step_raw (str): The raw BDD step text from the feature file.
+            step (str): The current test step description.
+            scenario (str, optional): Scenario name for logging/tracking. Defaults to ''.
         Returns:
-            JSON response with status and error information
-        """        
+            str: JSON-formatted result with status, optional snapshot data, and any error message.
+        """
         resp = init_tool_response()
         try:
             dlg = browser_manager.get_main_window()
-            dlg.type_keys(get_shortcut_key(name))
+            # dlg.type_keys(get_shortcut_key(keys_sequence_raw))
+            dlg.type_keys(key_sequence_formatted)
             time.sleep(2)
             if need_snapshot == 1:
                 snapshot = extract_element_info(browser_manager.get_main_window()) 
@@ -391,7 +393,7 @@ def register_browser_tools(mcp, browser_manager):
             resp["status"] = "success"
         except Exception as e:
             resp["error"] = repr(e)
-            logger.error(f"Error sending keystrokes '{name}': {e}")
+            logger.error(f"Error sending keystrokes raw:'{keys_sequence_raw}' '{key_sequence_formatted}': {repr(e)}")
             
         return format_tool_response(resp)
     
