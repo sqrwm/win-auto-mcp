@@ -54,7 +54,7 @@ def register_verify_tools(mcp, browser_manager):
             
             # First try a quick search
             try:
-                element = search_parent.child_window(**search_kwargs, depth=20)
+                element = search_parent.child_window(**search_kwargs)
                 
                 # Check if element exists with timeout
                 exists = element.exists(timeout=timeout)
@@ -71,7 +71,9 @@ def register_verify_tools(mcp, browser_manager):
                 logger.error(f"Error searching for element '{element_name}': {search_error}")
 
             if need_snapshot == 1:
+                logger.info(f" verify_element_exists extract_element_info start .......")
                 snapshot = extract_element_info(browser_manager.get_main_window()) 
+                logger.info(f" verify_element_exists extract_element_info end")
                 resp["data"] = {"step_raw": step_raw, "snapshot": snapshot}
         except Exception as e:
             resp["error"] = repr(e)
@@ -117,7 +119,7 @@ def register_verify_tools(mcp, browser_manager):
             search_kwargs["title"] = checkbox_name
             search_kwargs["control_type"] = control_type
 
-            checkbox_element = dlg.child_window(**search_kwargs, depth=20)
+            checkbox_element = dlg.child_window(**search_kwargs)
             exists = checkbox_element.exists(timeout=timeout)
             
             if exists:
@@ -188,7 +190,7 @@ def register_verify_tools(mcp, browser_manager):
             search_kwargs["title"] = f"{element_name}"
             search_kwargs["control_type"] = control_type
 
-            edit_element = dlg.child_window(**search_kwargs, depth=20)
+            edit_element = dlg.child_window(**search_kwargs)
             exists = edit_element.exists(timeout=timeout)
             
             if exists:
