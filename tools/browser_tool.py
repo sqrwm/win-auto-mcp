@@ -172,7 +172,7 @@ def register_browser_tools(mcp, browser_manager):
                 auto_id="view_1022",
                 control_type="Edit",
                 found_index=0,
-                depth=20
+                # depth=20
             )
             address_edit.wrapper_object().click_input()
             address_edit.wrapper_object().type_keys('^a{BACKSPACE}' + url + '{ENTER}')
@@ -524,7 +524,7 @@ def register_browser_tools(mcp, browser_manager):
             dropdown = dlg.child_window(
                 title=f"{dropdown_name}",
                 control_type="ComboBox",
-                depth=20
+                # depth=20
             )
             dropdown.click_input()
             time.sleep(2)  # Wait for the dropdown list to expand
@@ -563,7 +563,7 @@ def register_browser_tools(mcp, browser_manager):
             option_item = dlg.child_window(
                 title=f"{option}",
                 control_type=control_type,
-                depth=20
+                # depth=20
             )
             option_item.click_input()
             time.sleep(2)  
@@ -575,7 +575,7 @@ def register_browser_tools(mcp, browser_manager):
             try:
                 option_item = dlg.child_window(
                     title=option,
-                    depth=20
+                    # depth=20
                 )
                 option_item.click_input()
                 time.sleep(2)  
