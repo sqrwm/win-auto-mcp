@@ -36,7 +36,7 @@ def register_verify_tools(mcp, browser_manager):
         
         Args:
             element_name: Name or text of the element to search for
-            control_type: Optional control type for more specific search (TreeItem, Button, etc.)
+            control_type: UI element type (e.g., Group, Button, TreeItem), **MUST be extracted from the UI snapshot/element information, do NOT assume based on content type**.
             timeout: Maximum time in seconds to wait for the element
             scenario: Test scenario name
             step_raw: Raw original step text
@@ -58,23 +58,26 @@ def register_verify_tools(mcp, browser_manager):
                 
                 # Check if element exists with timeout
                 exists = element.exists(timeout=timeout)
-                
+                # if not exists:
+                #     if control_type == "Text":
+                #         search_kwargs.pop("control_type", None)
+                #         element = search_parent.child_window(**search_kwargs)
+                #         exists = element.exists(timeout=timeout)
+
                 if exists:
-                    # Get additional details about the found element
                     resp["status"] = "success"
                 else:
+                    # If element not found, return failure
                     resp["status"] = "failed"
                     resp["error"] = f"Element '{element_name}' not found within {timeout} seconds."
-                    logger.error(f"{resp['error']}: {search_kwargs}")
+                    logger.error(f"{resp['error']}: {search_kwargs}")   
             except Exception as search_error:
                 resp["error"] = repr(search_error)
                 logger.error(f"Error searching for element '{element_name}': {search_error}")
 
             if need_snapshot == 1:
-                logger.info(f" verify_element_exists extract_element_info start .......")
                 snapshot = extract_element_info(browser_manager.get_main_window()) 
-                logger.info(f" verify_element_exists extract_element_info end")
-                resp["data"] = {"step_raw": step_raw, "snapshot": snapshot}
+                resp["data"] = {"snapshot": snapshot}
         except Exception as e:
             resp["error"] = repr(e)
             logger.error(f"Error in verify_element_exists for '{element_name}': {e}")
