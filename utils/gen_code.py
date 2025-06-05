@@ -346,7 +346,6 @@ def gen_step_file_from_feature_path(feature_file: str):
             features_dir = feature_path
     steps_dir = features_dir / "steps"
 
-    # 获取 feature 文件相对 features 的路径
     rel_path = feature_path.relative_to(features_dir)
     step_file_dir = steps_dir / rel_path.parent
     step_file_name = "common_step.py"
@@ -359,10 +358,8 @@ def gen_step_file_from_feature_path(feature_file: str):
   
     return str(steps_dir), str(step_file_path)
 
-    # # 创建目录
     # os.makedirs(step_file_dir, exist_ok=True)
 
-    # # 创建 step 文件（如不存在）
     # if not step_file_path.exists():
     #     with open(step_file_path, "w", encoding="utf-8") as f:
     #         f.write(f"# Auto-generated step file for {rel_path.name}\n")
